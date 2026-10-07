@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="800" viewBox="0 0 600 800">
+<defs>
+<filter id="g" x="-60%" y="-60%" width="220%" height="220%">
+<feGaussianBlur stdDeviation="7" result="b"/>
+<feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+</defs>
+<rect width="600" height="800" fill="#0d0f14"/>
+<rect x="203" y="738" width="96" height="22" rx="3" fill="#202840"/>
+<rect x="306" y="738" width="96" height="22" rx="3" fill="#202840"/>
+<rect x="215" y="545" width="82" height="196" fill="#161c28"/>
+<rect x="308" y="545" width="82" height="196" fill="#161c28"/>
+<rect x="195" y="516" width="215" height="36" rx="2" fill="#1c2235"/>
+<polygon points="164,282 436,282 410,516 190,516" fill="#1c2235"/>
+<rect x="248" y="340" width="104" height="70" rx="2" fill="#0a0c12" opacity="0.5"/>
+<rect x="104" y="260" width="62" height="254" rx="3" fill="#161c28"/>
+<rect x="434" y="260" width="62" height="254" rx="3" fill="#161c28"/>
+<rect x="90" y="240" width="120" height="44" rx="4" fill="#202840"/>
+<rect x="395" y="240" width="120" height="44" rx="4" fill="#202840"/>
+<rect x="270" y="206" width="60" height="42" fill="#1c2235"/>
+<rect x="210" y="104" width="180" height="116" rx="6" fill="#1c2235"/>
+<circle cx="300" cy="162" r="50" fill="#202840"/>
+<circle cx="300" cy="162" r="43" fill="#161c28"/>
+<circle cx="300" cy="162" r="35" fill="#202840"/>
+<line x1="300" y1="112" x2="300" y2="122" stroke="#fbbf24" stroke-width="2.5" opacity="0.42"/>
+<line x1="344" y1="123" x2="337" y2="130" stroke="#fbbf24" stroke-width="2.5" opacity="0.42"/>
+<line x1="352" y1="162" x2="342" y2="162" stroke="#fbbf24" stroke-width="2.5" opacity="0.42"/>
+<line x1="344" y1="201" x2="337" y2="194" stroke="#fbbf24" stroke-width="2.5" opacity="0.42"/>
+<line x1="300" y1="212" x2="300" y2="202" stroke="#fbbf24" stroke-width="2.5" opacity="0.42"/>
+<line x1="256" y1="201" x2="263" y2="194" stroke="#fbbf24" stroke-width="2.5" opacity="0.42"/>
+<line x1="248" y1="162" x2="258" y2="162" stroke="#fbbf24" stroke-width="2.5" opacity="0.42"/>
+<line x1="256" y1="123" x2="263" y2="130" stroke="#fbbf24" stroke-width="2.5" opacity="0.42"/>
+<circle cx="300" cy="162" r="24" fill="#fbbf24" filter="url(#g)" opacity="0.65"/>
+<circle cx="300" cy="162" r="13" fill="#fbbf24" opacity="0.88"/>
+<circle cx="300" cy="162" r="5" fill="#fef3c7" opacity="0.6"/>
+<text x="300" y="777" font-family="monospace" font-size="15" fill="#fbbf24" text-anchor="middle" letter-spacing="2" font-weight="600">FX WATCH</text>
+<text x="300" y="795" font-family="monospace" font-size="11" fill="#6b7280" text-anchor="middle" letter-spacing="1">SHELL</text>
+</svg>

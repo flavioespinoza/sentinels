@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="800" viewBox="0 0 600 800">
+<defs>
+<filter id="g" x="-60%" y="-60%" width="220%" height="220%">
+<feGaussianBlur stdDeviation="7" result="b"/>
+<feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+</defs>
+<rect width="600" height="800" fill="#0d0f14"/>
+<rect x="203" y="738" width="96" height="22" rx="3" fill="#202840"/>
+<rect x="306" y="738" width="96" height="22" rx="3" fill="#202840"/>
+<rect x="215" y="545" width="82" height="196" fill="#161c28"/>
+<rect x="308" y="545" width="82" height="196" fill="#161c28"/>
+<rect x="195" y="516" width="215" height="36" rx="2" fill="#1c2235"/>
+<polygon points="164,282 436,282 410,516 190,516" fill="#1c2235"/>
+<rect x="248" y="340" width="104" height="70" rx="2" fill="#0a0c12" opacity="0.5"/>
+<rect x="104" y="260" width="62" height="254" rx="3" fill="#161c28"/>
+<rect x="434" y="260" width="62" height="254" rx="3" fill="#161c28"/>
+<rect x="90" y="240" width="120" height="44" rx="4" fill="#202840"/>
+<rect x="395" y="240" width="120" height="44" rx="4" fill="#202840"/>
+<rect x="270" y="206" width="60" height="42" fill="#1c2235"/>
+<polygon points="226,210 374,210 356,108 244,108" fill="#202840"/>
+<polygon points="272,108 300,50 328,108" fill="#2d2060"/>
+<line x1="300" y1="108" x2="300" y2="142" stroke="#8b5cf6" stroke-width="1" opacity="0.3"/>
+<polygon points="300,143 328,170 300,197 272,170" fill="#8b5cf6" filter="url(#g)" opacity="0.85"/>
+<polygon points="300,156 315,170 300,184 285,170" fill="#ede9fe" opacity="0.28"/>
+<text x="300" y="777" font-family="monospace" font-size="12" fill="#8b5cf6" text-anchor="middle" letter-spacing="1.5" font-weight="600">DIRECTIVE SYNC WATCHER</text>
+<text x="300" y="795" font-family="monospace" font-size="11" fill="#6b7280" text-anchor="middle" letter-spacing="1">TYPESCRIPT</text>
+</svg>
