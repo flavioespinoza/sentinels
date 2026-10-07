@@ -5,3 +5,4 @@ _tmp/
 *.user
 .vs/
 TestResults/
+_sources/

@@ -1,108 +1,139 @@
-# sol-bot-sentinel
+# Sentinels
 
-An independent, read-only sentinel for the Sol Bot auto-traders, written in C# on ASP.NET Core. It watches the bots from outside and raises an alert when a position crosses a risk line, a bot steps outside its limits, or the trend flips and a bot does not act. It cannot place, change, or close a trade.
+Independent, read-only watchdogs over production systems, each written in the language that fits its host. Built by Flavio Espinoza, every one of them with a Claude Code agent at the keyboard.
 
-For where this sits in the whole system, read [how the security is layered](_docs/DOC__sol_bot_sentinel--architecture--security-layers.md).
+## What A Sentinel Is
 
-Built Oct 05 2026 with Claude Code agents and deployed the same day: it runs on Cloud Run as one always-on instance and reads the production engine's feed over the private network, every 15 seconds, since 4:28 PM (MDT) on Oct 05 2026. By default a fresh checkout runs against a scripted market; `Source` set to `http` is the deployed configuration. Paging is not wired yet: alerts are logged and served until a Pushover token is provided.
+A sentinel is a guard posted outside a system to watch it and raise the alarm. It never acts. It reads what the system exposes, compares it against a line drawn in advance, and the moment the line is crossed it pages a person. Then it goes back to watching.
 
-## The Three Watchers
+The rule is the same for every one of them:
 
-Each watcher is one class and one hosted background service in the same process. A new watcher is one more class and one line in `Program.cs`.
+- **`A`**: `It Cannot Act On The System It Watches` -- a sentinel reads a feed, a folder, a log, or a chain. It holds nothing that could place a trade, close a position, or change the thing it guards. If the sentinel itself is compromised, the worst it can do is page.
+- **`B`**: `It Holds No Key` -- no signing key, no credential that moves money. A bearer token to read a feed is the most it carries, and that token is a secret in the host, never a line in a file.
+- **`C`**: `It Pages A Person` -- a sentinel decides nothing. It raises an alert once, at the first crossing, sends it to a phone, and stays quiet until the condition clears. The chain of watchers ends at a desk, where a person makes the call.
 
-- **Trend watcher** -- the double-check on the trend flip. When the trend flips, the bot for the old trend must close and the bot for the new trend must open:
-  - `flip-not-closed`: the old-trend bot is still open after the grace window.
-  - `flip-not-opened`: the new-trend bot is still idle after the grace window and never acted on the flip. A bot that opened and was then stopped out is not flagged.
-  - A bot the engine reports as disabled, manual, or disarmed is not judged.
-- **Risk watcher** -- three exit checks on an open position:
-  - `price-stop`: price at or under `entry * (1 - stopLossPct / leverage)`.
-  - `ltv-guard`: debt over collateral value at or over the threshold, ahead of the lender's own liquidation line.
-  - `borrow-rate`: net carry under the floor for a full dwell window, so a brief rate spike does not trip it.
-  - A reading that carries no prices is not judged on price.
-- **Conduct watcher** -- that the bot is behaving:
-  - `cap-exceeded`: a position opened over the per-position cap.
-  - `leverage-exceeded`: leverage over the allowed maximum.
-  - `stale-heartbeat`: the bot has stopped reporting.
+It is turtles all the way down: a watcher over the engine, a watcher over the watcher, and at the bottom a human. The file watchers at the end of the roster bend the first rule on purpose: each one acts on the folder it watches, and on nothing else.
 
-The service also watches its own watchers: `/health` reports `degraded` when any one of them has stopped polling.
+Each sentinel is meant to stand on its own, with its own build and its own tests and nothing shared between them, so a visitor can take the one in the language they want and leave the rest. Today the C# sentinel lives in this repo at the root. The others are listed with where their code lives now, and each one has a page under `_deep-dives/` that says what it is, how it works, what it is useful for, and how far along it honestly is.
 
-An alert is raised once, at the first crossing, and not again until the condition clears. When Pushover is configured, each new alert is also sent to a phone, once; `/health` reports `paging: true` when it is. A read error never stops a watcher: it logs and tries again on the next tick.
+## The Roster
 
-## Run It
+### Sol Bot Sentinel
 
-```bash
-dotnet run --project src/SolBotSentinel
-```
+![Sol Bot Sentinel](_images/sol-bot-sentinel.svg)
 
-Or in a container:
+`C# + ASP.NET Core`
 
-```bash
-docker build -t sol-bot-sentinel:1 .
-docker run --rm -p 8080:8080 --name sol-bot-sentinel-1 sol-bot-sentinel:1
-```
+**Status:** deployed on production, on Cloud Run, since Oct 05 2026.
 
-```bash
-curl http://localhost:5037/health
-curl http://localhost:5037/alerts
-curl http://localhost:5037/alerts/history
-```
+An independent watchdog over a pair of live auto-traders that run for a private client on a public blockchain. Three hosted watchers read the engine's feed every 15 seconds: one for the trend flip a bot failed to act on, one for an open position crossing a risk line, and one for a bot stepping outside its own limits or going quiet. On its first run against the production feed it caught a restart replaying months-old trend flips into new bots.
 
-The scripted market runs about a minute. One bot's price walks down to its stop and the risk watcher raises `price-stop`. Then the trend flips: the second bot opens over the cap and the conduct watcher raises `cap-exceeded`; the first bot never closes, and once the grace window is over the trend watcher raises `flip-not-closed`.
+[Deep dive: Sol Bot Sentinel](_deep-dives/sol-bot-sentinel.md)
 
-## Deploy It
+### Sentry Engine
 
-```bash
-GCP_PROJECT=... FEED_URL=... FEED_TOKEN_SECRET=... API_TOKEN_SECRET=... ./scripts/deploy.sh
-```
+![Sentry Engine](_images/sentry-engine.svg)
 
-It deploys to Cloud Run as one always-on instance under a service account that can read only its own secrets, reads the feed over the private network, and finishes only when `/health` reports `ok` on the live feed. Run it again to redeploy.
+`C++`
 
-## Test It
+**Status:** running in tests; the graph scheduler is a stub; code in a private repo, to be rebuilt here from source.
 
-```bash
-dotnet test
-```
+The real-time audio engine under a home security sentry: a node graph, parameters with two-stage smoothing, and a BiQuad filter on Transposed Direct Form II that allocates nothing in the hot path. Thirteen DSP tests, from impulse response to a single-bin DFT, and a benchmark that defeats dead-code elimination. The filter is real and tested; the graph scheduler is still a stub, and its page says so.
 
-Thirty-eight tests: the rule arithmetic at each boundary, the dwell window, the flip grace window, the raise-once store, the health of the watchers, the bearer check, the Pushover notifier, the running service read over HTTP, and the contract with the engine's feed.
+[Deep dive: Sentry Engine](_deep-dives/sentry-engine.md)
 
-## Configure It
+### Candle Watch
 
-Every threshold is in the `Watch` section of `appsettings.json` and can be overridden by environment variable, for example `Watch__PollMs=500`. No address or key of ours is written in source. The tokens are secrets and belong in the host's secret store, never in a file.
+![Candle Watch](_images/candle-watch.svg)
 
-| Setting | Default | Meaning |
-|---------|---------|---------|
-| `Source` | `simulated` | `simulated`, or `http` to read the engine's feed |
-| `FeedUrl` | empty | the address of the engine's feed |
-| `FeedToken` | empty | the bearer token the engine's feed requires |
-| `ApiToken` | empty | when set, `/alerts` and `/alerts/history` require it as a bearer token |
-| `PollMs` | `2000` | how often the watchers read |
-| `StopLossPct` | `0.10` | share of the deposit that may be lost before the price stop |
-| `LtvTripThreshold` | `0.80` | loan-to-value that trips the guard |
-| `CarryFloorApr` | `0` | net carry under this starts the dwell clock |
-| `CarryDwellMs` | `1200000` | how long carry must stay under the floor |
-| `PositionCapUsd` | `100` | largest deposit a bot may open with |
-| `MaxLeverage` | `3.0` | highest leverage a bot may use |
-| `HeartbeatStaleMs` | `60000` | age at which a reading counts as stale |
-| `PushoverToken`, `PushoverUser` | empty | when both are set, each new alert is pushed to a phone |
-| `FlipGraceMs` | `30000` | how long a bot has to act on a trend flip |
-| `FlipToleranceMs` | `2000` | slack when matching a bot's last action to the flip time |
+`Rust`
 
-## Layout
+**Status:** specified; build in progress; code in a private repo, to be moved here.
 
-```txt
-src/SolBotSentinel/
-  Program.cs            wiring and the three endpoints
-  Domain/Models.cs      snapshot, trend reading, alert, options
-  Rules/                the checks, as pure functions
-  Sources/              where readings come from
-  Watchers/             the three background services
-  AlertStore.cs         raise-once alert memory
-  Health.cs             the check on the watchers themselves
-  ApiAuth.cs            the bearer check for the alert routes
-  Notify.cs             the Pushover notifier
-tests/SolBotSentinel.Tests/
-_docs/                  the architecture
-scripts/deploy.sh        deploy to Cloud Run
-Dockerfile
-.github/workflows/ci.yml
-```
+A small daemon that asks one question of every market: are the candles still arriving? It reads the newest candles per market, runs a per-market state machine (ok, stale, flat, unreadable), and pages on a transition and once on recovery. It never repairs and never trades.
+
+[Deep dive: Candle Watch](_deep-dives/candle-watch.md)
+
+### Obligation Reader
+
+![Obligation Reader](_images/obligation-reader.svg)
+
+`Rust`
+
+**Status:** specified; build in progress; code in a private repo, to be moved here.
+
+A second pair of eyes on an on-chain position. It decodes the lending protocol's obligation accounts in Rust with `solana-sdk` and publishes each reading beside the value the engine's own TypeScript decoder produced, with the delta. It pages on divergence and is never a decision input.
+
+[Deep dive: Obligation Reader](_deep-dives/obligation-reader.md)
+
+### Corpus Sentinel
+
+![Corpus Sentinel](_images/corpus-sentinel.svg)
+
+`Rust`
+
+**Status:** designed; first pieces building; code in a private repo, to be moved here.
+
+A small, hard front door for a retrieval engine that must stay loaded in memory. An `axum` service carries the bearer-token auth, the rate limit, the health route, and the private firewall boundary, and passes everything else through to the engine on localhost. The matrix stays loaded while the surface stays small.
+
+[Deep dive: Corpus Sentinel](_deep-dives/corpus-sentinel.md)
+
+### Tribal Knowledge Watcher
+
+![Tribal Knowledge Watcher](_images/tribal-knowledge-watcher.svg)
+
+`TypeScript`
+
+**Status:** built; runs from its home repo, `watcher-tribal-knowledge`.
+
+A folder watcher that turns a Slack screenshot into structured Markdown. Drop an image in, and it renames it, transcribes it word for word with Gemini Vision, structures it with Gemini 2.5 Flash into topic, authors, summary, takeaways, and actions, and files the result under an index. Then it plays the drums and pops an alert so nobody misses it.
+
+[Deep dive: Tribal Knowledge Watcher](_deep-dives/tribal-knowledge-watcher.md)
+
+### Directive Sync Watcher
+
+![Directive Sync Watcher](_images/directive-sync-watcher.svg)
+
+`TypeScript`
+
+**Status:** built; runs from its home repo, `watcher-directive-sync`.
+
+A mechanical watcher that keeps a rules file in sync with the specs that govern it. It polls a specs folder, hashes each directive spec, waits for the file to sit still, then swaps the spec's content in between two boundary markers in the target file. No AI anywhere in it: a deterministic text swap, with 28 tests.
+
+[Deep dive: Directive Sync Watcher](_deep-dives/directive-sync-watcher.md)
+
+### Veritas Sentinel
+
+![Veritas Sentinel](_images/veritas-sentinel.svg)
+
+`JavaScript`
+
+**Status:** built; lives in its home repo, `veritas-sentinel`.
+
+A black-box recorder for AI agent sessions. It tails a folder of JSONL logs by byte offset, so nothing is ever re-read, and writes every turn into a live Markdown HUD that updates in the editor as the session runs. When an assistant turn runs long with no tool call, it warns on the console.
+
+[Deep dive: Veritas Sentinel](_deep-dives/veritas-sentinel.md)
+
+### Mercy
+
+![Mercy](_images/mercy.svg)
+
+`JavaScript`
+
+**Status:** older code; lives in its home repo, eScanner.
+
+The oldest of the set, a Node watcher inside a market scanner. It subscribes to an exchange's websocket for candles, the order book, and trades across every market quoted in BTC, ETH, USDT, or USD, splits the markets across process instances, and mirrors what it sees into Elasticsearch. It predates the three rules above and is listed here as the ancestor of the rest.
+
+[Deep dive: Mercy](_deep-dives/mercy.md)
+
+### FX Watch
+
+![FX Watch](_images/fx-watch.svg)
+
+`Shell`
+
+**Status:** running as a macOS launch agent; code in its home repo, `fx-renamer`.
+
+A launchd agent that renames every screenshot the moment it lands. It waits five seconds for the capture app to finish writing, then gives the file one lowercase, sortable, timestamped name, and touches nothing that was already in the folder. The renamed file is ready to be filed into an asset store.
+
+[Deep dive: FX Watch](_deep-dives/fx-watch.md)
