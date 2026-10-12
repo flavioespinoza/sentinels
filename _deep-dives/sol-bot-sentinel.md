@@ -14,7 +14,7 @@ An independent, read-only sentinel for the Sol Bot auto-traders, written in C# o
 
 For where this sits in the whole system, read [how the security is layered](../_docs/DOC__sol_bot_sentinel--architecture--security-layers.md).
 
-Built Oct 05 2026 with Claude Code agents and deployed the same day: it runs on Cloud Run as one always-on instance and reads the production engine's feed over the private network, every 15 seconds, since 4:28 PM (MDT) on Oct 05 2026. By default a fresh checkout runs against a scripted market; `Source` set to `http` is the deployed configuration. Paging is not wired yet: alerts are logged and served until a Pushover token is provided.
+Built Oct 05 2026 with Claude Code agents and deployed the same day: it runs on Cloud Run as one always-on instance and reads the production engine's feed over the private network, every 15 seconds, since 4:28 PM (MDT) on Oct 05 2026. By default a fresh checkout runs against a scripted market; `Source` set to `http` is the deployed configuration. Paging is wired: the deployed service reads its Pushover token and user from Secret Manager, so an alert pages Flavio's devices as well as being logged and served.
 
 ### The Three Watchers
 
