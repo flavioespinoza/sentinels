@@ -116,7 +116,7 @@ A black-box recorder for AI agent sessions. It tails a folder of JSONL logs by b
 
 ### Mercy
 
-<img src="_design/mercy/mercy-1.png" alt="Mercy" width="320" />
+<img src="_design/final/mercy/mercy-1.png" alt="Mercy" width="320" />
 
 `JavaScript`
 

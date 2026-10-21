@@ -1,8 +1,8 @@
 # Mercy
 
-<img src="_design/mercy/mercy-1.png" alt="Mercy" width="420" />
+<img src="_design/final/mercy/mercy-1.png" alt="Mercy" width="420" />
 
-<video src="_design/mercy/mercy-1.mp4" poster="_design/mercy/mercy-1.png" width="420" controls muted loop playsinline preload="metadata"></video>
+<video src="_design/final/mercy/mercy-1.mp4" poster="_design/final/mercy/mercy-1.png" width="420" controls muted loop playsinline preload="metadata"></video>
 
 _Mercy, first portrait. Generated on OpenArt._
 
