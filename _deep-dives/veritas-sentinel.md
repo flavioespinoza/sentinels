@@ -6,7 +6,7 @@
 
 A black-box recorder for AI agent sessions. It tails local JSONL log files and turns them into a human-readable Markdown HUD, `live_audit.md`, that updates as the session runs and can be watched in an editor's preview pane. It reads, it writes one file, and it warns on the console when the agent is talking instead of working. One file of code, one dependency, written Feb 2026.
 
-## How It Works
+## How I Work
 
 - **`A`**: `Watch` -- `chokidar` watches a log directory, set by `LOG_DIR`, for `.jsonl` files, polling every 100 milliseconds.
 - **`B`**: `Cursors` -- an in-memory map of file path to byte offset. On every change it reads only the bytes appended since the last read, so nothing is ever re-read and several files can be followed at once.

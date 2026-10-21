@@ -22,7 +22,7 @@ It acts only on the files it finds. War drums play when a note lands.
 </div>
 </div>
 
-## How It Works
+## How I Work
 
 Knowledge that lives in a chat thread is tribal: it is in someone's head and in a scrollback nobody will search. Drop a screenshot of the thread into a folder and the watcher transcribes it word for word, structures it, files it, and indexes it, so it can feed a retrieval engine. It is a watcher over an inbox rather than a guard over a production system.
 

@@ -6,7 +6,7 @@
 
 The real-time audio engine under Veritas, a home security sentry: a thing you put on your phone so your voice cannot be cloned and turned against the people who trust it. Sentry Engine is the part that touches the audio. It is a node graph with parameters that smooth in two stages and a BiQuad filter built for the one place an allocation is a bug, the audio callback. It is the engine, not the detector: the detection layers that were meant to sit on it are designs, not code, and this page does not claim them.
 
-## How It Works
+## How I Work
 
 - **`A`**: `The Filter` -- a `BiQuadFilter` on Transposed Direct Form II. Zero allocation in the processing path, per-sample coefficient smoothing so a parameter change never clicks, and a Nyquist clamp on the cutoff so a bad parameter cannot produce an unstable filter.
 - **`B`**: `The Graph` -- an `AudioGraph` of nodes whose parameters smooth in two stages. The scheduler that walks the graph, `AudioGraph::processBlock()`, is a stub today, and this page says so rather than a quick start that pretends it runs.

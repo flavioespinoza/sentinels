@@ -6,7 +6,7 @@
 
 A macOS launch agent that renames every screenshot the moment it lands. A capture app writes `My App__2026-09-13_AM-3-01-32.png`; about five seconds later the file is `myapp--2026-09-13--03-01-32--am.png`: lowercase, no spaces, one timestamp shape, an AM or PM tag at the end, the created and modified dates untouched. It is the shell half of `fx-renamer`, whose rename rule is a TypeScript module with its own tests; the watcher is what makes the rule happen without anyone running it. The renamed file is ready to be filed into an asset store. It acts on the folder it watches, and on nothing else.
 
-## How It Works
+## How I Work
 
 - **`A`**: `Install` -- `scripts/install-watch.sh /path/to/folder` writes a launch agent plist from a template, lints it with `plutil`, records the install time, and bootstraps the agent with `launchctl`. Only files created after that time are ever renamed, so the folder's history is never touched.
 - **`B`**: `Trigger` -- launchd runs `fx-watch.sh` whenever a file lands in the watched folder.

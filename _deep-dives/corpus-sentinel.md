@@ -6,7 +6,7 @@
 
 A guard at the door of a retrieval engine. The engine is TypeScript and holds a matrix that is expensive to load, so it stays loaded, on localhost, and is never reached from outside directly. Corpus Sentinel is the only thing the outside can reach: a Rust service on `axum`, `rusqlite`, and `tokio` that owns the authentication, the rate limit, the health check, and the private firewall boundary, and passes everything that clears the gate through to the engine. The matrix stays loaded while the surface stays small.
 
-## How It Works
+## How I Work
 
 - **`A`**: `Auth` -- a bearer token on every request.
 - **`B`**: `Rate Limit` -- a cap on how often the door opens.

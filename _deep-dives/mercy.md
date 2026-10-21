@@ -22,7 +22,7 @@ It splits the markets eight ways. Each process takes one slice.
 </div>
 </div>
 
-## How It Works
+## How I Work
 
 Mercy subscribes to an exchange's websocket and keeps an eye on candles, the order book, and trades across every market quoted in BTC, ETH, USDT, or USD, mirroring what it sees into Elasticsearch and logging its own connection trouble to MongoDB. It predates the three rules on the front page and is listed here as the ancestor of the rest: the first time a process was posted outside the trading logic to watch a market and write down what it saw.
 
