@@ -20,8 +20,6 @@ Each sentinel is meant to stand on its own, with its own build and its own tests
 
 ## The Roster
 
-### Sol Bot Sentinel
-
 <div class="sentinel-row">
 <div class="sentinel-media">
 <img src="_design/final/sol-bot-sentinel/sol-bot-sentinel-1.png" alt="Sol Bot Sentinel" />
@@ -29,18 +27,16 @@ Each sentinel is meant to stand on its own, with its own build and its own tests
 </div>
 <div class="sentinel-text">
 
-`C# + ASP.NET Core`
+### Sol Bot Sentinel `C# + ASP.NET Core`
+
+A watchdog that sits beside the live Sol Bot trading engine and never touches it. Every 15 seconds it reads the feed of two live auto-traders and pages a phone on a missed trend flip, a position past a risk line, or a bot out of bounds or gone quiet.
+
+</div>
+</div>
 
 **Status:** deployed on production, on Cloud Run, since Oct 05 2026.
 
-Every 15 seconds it reads the feed of two live auto-traders and pages a phone on a missed trend flip, a position past a risk line, or a bot out of bounds or gone quiet.
-
 [Deep dive: Sol Bot Sentinel](_deep-dives/sol-bot-sentinel.md)
-
-</div>
-</div>
-
-### Tribal Knowledge
 
 <div class="sentinel-row">
 <div class="sentinel-media">
@@ -49,18 +45,16 @@ Every 15 seconds it reads the feed of two live auto-traders and pages a phone on
 </div>
 <div class="sentinel-text">
 
-`TypeScript`
+### Tribal Knowledge `TypeScript`
+
+It reads Slack screenshots with Gemini Vision (OCR), turns them into structured Markdown, and feeds that to a retrieval engine. Each one is transcribed word for word and filed under an index. Then it plays the drums and pops an alert.
+
+</div>
+</div>
 
 **Status:** built; runs from its home repo, `watcher-tribal-knowledge`.
 
-Watches a folder for Slack screenshots and turns each one into structured Markdown, transcribed word for word and filed under an index. Then it plays the drums and pops an alert.
-
 [Deep dive: Tribal Knowledge](_deep-dives/tribal-knowledge.md)
-
-</div>
-</div>
-
-### Mercy
 
 <div class="sentinel-row">
 <div class="sentinel-media">
@@ -69,13 +63,13 @@ Watches a folder for Slack screenshots and turns each one into structured Markdo
 </div>
 <div class="sentinel-text">
 
-`JavaScript`
+### Mercy `JavaScript`
+
+An older Node watcher that lives inside eScanner. The oldest sentinel, it copies an exchange's candles, order book, and trades for every market quoted in BTC, ETH, USDT, or USD into Elasticsearch. It predates the three rules above.
+
+</div>
+</div>
 
 **Status:** older code; lives in its home repo, eScanner.
 
-The oldest sentinel, a Node watcher that copies an exchange's candles, order book, and trades for every market quoted in BTC, ETH, USDT, or USD into Elasticsearch. It predates the three rules above.
-
 [Deep dive: Mercy](_deep-dives/mercy.md)
-
-</div>
-</div>
