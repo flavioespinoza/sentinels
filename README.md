@@ -25,6 +25,7 @@ Each sentinel is meant to stand on its own, with its own build and its own tests
 <div class="sentinel-row">
 <div class="sentinel-media">
 <img src="_design/final/sol-bot-sentinel/sol-bot-sentinel-1.png" alt="Sol Bot Sentinel" />
+<p class="sentinel-caption"><em>Created with OpenArt AI</em></p>
 </div>
 <div class="sentinel-text">
 
@@ -120,6 +121,7 @@ A small, hard front door for a retrieval engine that must stay loaded in memory.
 <div class="sentinel-row">
 <div class="sentinel-media">
 <img src="_design/final/tribal-knowledge/tribal-knowledge-1.png" alt="Tribal Knowledge Watcher" />
+<p class="sentinel-caption"><em>Created with OpenArt AI</em></p>
 </div>
 <div class="sentinel-text">
 
@@ -177,6 +179,7 @@ Watches the logs of AI agent sessions and writes every turn into a live Markdown
 <div class="sentinel-row">
 <div class="sentinel-media">
 <img src="_design/final/mercy/mercy-1.png" alt="Mercy" />
+<p class="sentinel-caption"><em>Created with OpenArt AI</em></p>
 </div>
 <div class="sentinel-text">
 

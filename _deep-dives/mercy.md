@@ -3,7 +3,7 @@
 <div class="sentinel-row sentinel-row-3">
 <div class="sentinel-media sentinel-media-wide">
 <img src="_design/final/mercy/mercy-1.png" alt="Mercy, opening frame" />
-<p class="sentinel-caption"><em>Mercy, first portrait. Generated on OpenArt.</em></p>
+<p class="sentinel-caption"><em>Created with OpenArt AI</em></p>
 </div>
 <div class="sentinel-text">
 
@@ -16,7 +16,7 @@ The oldest watcher in the set, a Node process inside eScanner, a market scanner.
 </div>
 <div class="sentinel-media sentinel-media-wide">
 <img src="_design/final/mercy/mercy-last.png" alt="Mercy, last frame" />
-<p class="sentinel-caption"><em>Last frame.</em></p>
+<p class="sentinel-caption"><em>Created with OpenArt AI</em></p>
 </div>
 </div>
 
