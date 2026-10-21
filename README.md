@@ -40,11 +40,11 @@ Every 15 seconds it reads the feed of two live auto-traders and pages a phone on
 </div>
 </div>
 
-### Tribal Knowledge Chief
+### Tribal Knowledge
 
 <div class="sentinel-row">
 <div class="sentinel-media">
-<img src="_design/final/tribal-knowledge/tribal-knowledge-1.png" alt="Tribal Knowledge Chief" />
+<img src="_design/final/tribal-knowledge/tribal-knowledge-1.png" alt="Tribal Knowledge" />
 <p class="sentinel-caption"><em>Created with OpenArt AI</em></p>
 </div>
 <div class="sentinel-text">
@@ -55,7 +55,7 @@ Every 15 seconds it reads the feed of two live auto-traders and pages a phone on
 
 Watches a folder for Slack screenshots and turns each one into structured Markdown, transcribed word for word and filed under an index. Then it plays the drums and pops an alert.
 
-[Deep dive: Tribal Knowledge Chief](_deep-dives/tribal-knowledge-chief.md)
+[Deep dive: Tribal Knowledge](_deep-dives/tribal-knowledge.md)
 
 </div>
 </div>

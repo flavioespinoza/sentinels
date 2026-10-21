@@ -15,7 +15,7 @@ The current Sentinel roster is:
 
 - Sol Bot Sentinel
 - Veritas Sentinel
-- Tribal Knowledge Watcher
+- Tribal Knowledge
 - Sentry Engine
 - Candle Watch
 - Obligation Reader

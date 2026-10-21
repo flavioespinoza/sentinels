@@ -83,8 +83,8 @@ CHARACTERS = [
         ],
     },
     {
-        "slug": "tribal-knowledge-watcher",
-        "name": "Tribal Knowledge Watcher",
+        "slug": "tribal-knowledge",
+        "name": "Tribal Knowledge",
         "element": "dish antenna on helmet",
         "silhouette": "slim, crouched, dish crown",
         "accent_name": "cyan",
@@ -92,7 +92,7 @@ CHARACTERS = [
         "language": "TypeScript",
         "role": "the listener",
         "block": (
-            "Tribal Knowledge Watcher, the listener. A slim young woman in her twenties, East Asian, bright alert face, short black hair swept to one side, light scout armor with clean angular seams and one circuit-board trace on the right shoulder. "
+            "Tribal Knowledge, the listener. A slim young woman in her twenties, East Asian, bright alert face, short black hair swept to one side, light scout armor with clean angular seams and one circuit-board trace on the right shoulder. "
             "Her helmet is a wide low headset with a small parabolic dish antenna mounted on top, tilted up and forward as if catching something out of the air; a cyan triangle lens (#22d3ee) sits over her left eye, her right eye bare. "
             "One cyan stripe runs across the chest plate. She is down on one knee, one hand cupped behind her ear, head tilted, listening to something off frame. "
             "Accent glow: cyan, triangle lens, dish rim, and stripe only."

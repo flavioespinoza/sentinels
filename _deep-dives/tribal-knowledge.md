@@ -1,8 +1,8 @@
-# Tribal Knowledge Chief `TypeScript`
+# Tribal Knowledge `TypeScript`
 
 <div class="sentinel-row sentinel-row-3">
 <div class="sentinel-media sentinel-media-wide">
-<img src="_design/final/tribal-knowledge/tribal-knowledge-1.png" alt="Tribal Knowledge Chief, opening frame" />
+<img src="_design/final/tribal-knowledge/tribal-knowledge-1.png" alt="Tribal Knowledge, opening frame" />
 <p class="sentinel-caption"><em>Created with OpenArt AI</em></p>
 </div>
 <div class="sentinel-text">
@@ -17,7 +17,7 @@ It acts only on the files it finds. War drums play when a note lands.
 
 </div>
 <div class="sentinel-media sentinel-media-wide">
-<img src="_design/final/tribal-knowledge/tribal-knowledge-last.png" alt="Tribal Knowledge Chief, last frame" />
+<img src="_design/final/tribal-knowledge/tribal-knowledge-last.png" alt="Tribal Knowledge, last frame" />
 <p class="sentinel-caption"><em>Created with OpenArt AI</em></p>
 </div>
 </div>
