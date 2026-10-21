@@ -1,24 +1,18 @@
-# Sol Bot Sentinel `C# + ASP.NET Core`
-
-<div class="sentinel-row sentinel-row-3">
-<div class="sentinel-media sentinel-media-wide">
+<div class="sentinel-row">
+<div class="sentinel-media">
 <img src="_design/final/sol-bot-sentinel/sol-bot-sentinel-1.png" alt="Sol Bot Sentinel, opening frame" />
 <p class="sentinel-caption"><em>Created with OpenArt AI</em></p>
 </div>
 <div class="sentinel-text">
 
-## I Watch The Trading Bots
+# Sol Bot Sentinel `C# + ASP.NET Core`
 
-Sol Bot is a pair of trading bots that borrow against collateral. One trades when the trend is long, the other when it is short. A mistake costs real money, fast. The engine has its own guards. The failure they miss is a trend flip a bot does not act on. Nothing is down, and the position is simply wrong.
+A watchdog that sits beside the live Sol Bot trading engine and never touches it. Sol Bot is a pair of trading bots that borrow against collateral. One trades when the trend is long, the other when it is short. A mistake costs real money, fast. The engine has its own guards. The failure they miss is a trend flip a bot does not act on. Nothing is down, and the position is simply wrong.
 
 This sentinel checks for that flip. It also checks risk lines, and bots that break their limits or go silent.
 
 It holds no key. It cannot place, change, or close a trade. It reads the live feed every 15 seconds. Its first run caught a restart bug in the engine.
 
-</div>
-<div class="sentinel-media sentinel-media-wide">
-<img src="_design/final/sol-bot-sentinel/sol-bot-sentinel-last.png" alt="Sol Bot Sentinel, last frame" />
-<p class="sentinel-caption"><em>Created with OpenArt AI</em></p>
 </div>
 </div>
 
@@ -150,3 +144,8 @@ Any system where an automated actor must react to a signal inside a window, wher
 ## Status
 
 Deployed on production. The code lives in this repo, at the root: `src/SolBotSentinel/`, `tests/SolBotSentinel.Tests/`, the `Dockerfile`, `scripts/deploy.sh`, and the GitHub Actions workflow. It runs on Cloud Run as one always-on instance, reading the production engine's feed over the private network every 15 seconds since Oct 05 2026. Thirty-eight xUnit tests run on every push. Paging through Pushover is in the code and switched on by configuration; `/health` reports `paging: true` when it is live. On its first run against the production feed it exposed a restart bug in the engine, a replay of months-old trend flips into two new bots, and the engine now gives every bot an origin date and ignores any flip from before it.
+
+<div class="sentinel-closing">
+<img src="_design/final/sol-bot-sentinel/sol-bot-sentinel-last.png" alt="Sol Bot Sentinel, last frame" />
+<p class="sentinel-caption"><em>Created with OpenArt AI</em></p>
+</div>

@@ -1,24 +1,18 @@
-# Tribal Knowledge `TypeScript`
-
-<div class="sentinel-row sentinel-row-3">
-<div class="sentinel-media sentinel-media-wide">
+<div class="sentinel-row">
+<div class="sentinel-media">
 <img src="_design/final/tribal-knowledge/tribal-knowledge-1.png" alt="Tribal Knowledge, opening frame" />
 <p class="sentinel-caption"><em>Created with OpenArt AI</em></p>
 </div>
 <div class="sentinel-text">
 
-## I Watch The Screenshot Inbox
+# Tribal Knowledge `TypeScript`
 
-Knowledge in a chat thread is tribal. It lives in someone's head and in a scrollback nobody will search. This file watcher turns a Slack screenshot into Markdown for a retrieval engine.
+It reads Slack screenshots with Gemini Vision (OCR), turns them into structured Markdown, and feeds that to a retrieval engine. Knowledge in a chat thread is tribal. It lives in someone's head and in a scrollback nobody will search.
 
 Drop a screenshot in a folder. Gemini transcribes it word for word. Then Gemini sorts it into a topic, a summary, takeaways, and actions. The note is filed and indexed.
 
 It acts only on the files it finds. War drums play when a note lands.
 
-</div>
-<div class="sentinel-media sentinel-media-wide">
-<img src="_design/final/tribal-knowledge/tribal-knowledge-last.png" alt="Tribal Knowledge, last frame" />
-<p class="sentinel-caption"><em>Created with OpenArt AI</em></p>
 </div>
 </div>
 
@@ -52,3 +46,8 @@ Anything that arrives as a picture of text and needs to become text that can be 
 ## Status
 
 Built; runs from its home repo, `watcher-tribal-knowledge`.
+
+<div class="sentinel-closing">
+<img src="_design/final/tribal-knowledge/tribal-knowledge-last.png" alt="Tribal Knowledge, last frame" />
+<p class="sentinel-caption"><em>Created with OpenArt AI</em></p>
+</div>

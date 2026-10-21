@@ -129,20 +129,23 @@
 			.markdown-section img {
 				max-width: 420px;
 			}
-			/* Each sentinel: image on the left, text on the right. */
+			/* Each sentinel: portrait on the left, title and intro on the right, top-aligned. */
 			.sentinel-row {
 				display: flex;
 				gap: 1.5rem;
 				align-items: flex-start;
-				margin-bottom: 2rem;
+				margin-bottom: 1.5rem;
 			}
 			.sentinel-media {
-				flex: 0 0 auto;
-				width: 220px;
+				flex: 0 0 260px;
+				width: 260px;
 			}
-			.sentinel-media-wide {
-				width: 300px;
+			/* The closing frame at the foot of a deep dive, the same width as the portrait. */
+			.sentinel-closing {
+				width: 260px;
+				margin: 24px 0 16px;
 			}
+			.markdown-section .sentinel-closing img,
 			.markdown-section .sentinel-media img,
 			.markdown-section .sentinel-media video {
 				display: block;
@@ -162,45 +165,32 @@
 				flex: 1;
 				min-width: 0;
 			}
-			.markdown-section .sentinel-text > :first-child {
+			.markdown-section.markdown-body .sentinel-text > :first-child {
 				margin-top: 0;
 			}
 			/* The language rides beside the title as a small badge. */
-			.markdown-section.markdown-body h1 code {
+			.markdown-section.markdown-body h1 code,
+			.markdown-section.markdown-body h3 code {
 				font-size: 0.45em;
 				font-weight: normal;
 				padding: 0.2em 0.4em;
 				vertical-align: middle;
 				white-space: nowrap;
 			}
-			/* A finished sentinel: opening frame, text, last frame. */
-			.sentinel-row-3 .sentinel-media {
-				flex: 0 0 240px;
-				width: 240px;
+			.markdown-section.markdown-body h3 code {
+				font-size: 0.7em;
 			}
-			/* Middle widths: drop the opening frame, text beside the last frame. */
-			@media (min-width: 641px) and (max-width: 1322px) {
-				.sentinel-row-3 .sentinel-media:first-child {
-					display: none;
-				}
-			}
-			/* Mobile: everything stacks in source order. */
+			/* Under 640 px the columns stack, image first. */
 			@media (max-width: 640px) {
 				.sentinel-row {
 					flex-direction: column;
 				}
-				.sentinel-media,
-				.sentinel-media-wide {
-					width: 100%;
-					max-width: 320px;
-				}
-				.sentinel-row-3 .sentinel-media {
+				.sentinel-media {
 					flex: 0 0 auto;
 					width: 100%;
 					max-width: 320px;
 				}
-				.sentinel-row-3 .sentinel-text {
-					flex: 0 0 auto;
+				.sentinel-text {
 					width: 100%;
 				}
 			}
