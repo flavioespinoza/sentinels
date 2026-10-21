@@ -1,6 +1,6 @@
 # Sentinels
 
-Independent, read-only watchdogs over production systems, each written in the language that fits its host. Built by Flavio Espinoza, every one of them with a Claude Code agent at the keyboard.
+A family of independent, read-only watchdogs over production systems, each written in the language that fits its host. Built by Flavio Espinoza, every one of them with a Claude Code agent at the keyboard.
 
 **Docs site:** [flavioespinoza.github.io/sentinels](https://flavioespinoza.github.io/sentinels/)
 
@@ -8,7 +8,7 @@ Independent, read-only watchdogs over production systems, each written in the la
 
 A sentinel is a guard posted outside a system to watch it and raise the alarm. It never acts. It reads what the system exposes, compares it against a line drawn in advance, and the moment the line is crossed it pages a person. Then it goes back to watching.
 
-The rule is the same for every one of them:
+The rule is the same for every one of them: a sentinel cannot act on the system it watches, holds no key, and pages my phone the moment something goes wrong.
 
 - **`A`**: `It Cannot Act On The System It Watches` -- a sentinel reads a feed, a folder, a log, or a chain. It holds nothing that could place a trade, close a position, or change the thing it guards. If the sentinel itself is compromised, the worst it can do is page.
 - **`B`**: `It Holds No Key` -- no signing key, no credential that moves money. A bearer token to read a feed is the most it carries, and that token is a secret in the host, never a line in a file.
