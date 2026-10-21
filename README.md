@@ -117,7 +117,7 @@ A small, hard front door for a retrieval engine that must stay loaded in memory.
 
 <div class="sentinel-row">
 <div class="sentinel-media">
-<img src="_images/tribal-knowledge-watcher.svg" alt="Tribal Knowledge Watcher" />
+<img src="_design/final/tribal-knowledge/tribal-knowledge-1.png" alt="Tribal Knowledge Watcher" />
 </div>
 <div class="sentinel-text">
 

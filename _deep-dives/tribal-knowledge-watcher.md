@@ -1,10 +1,20 @@
 # Tribal Knowledge Watcher
 
+<div class="sentinel-row">
+<div class="sentinel-media sentinel-media-wide">
+<img src="_design/final/tribal-knowledge/tribal-knowledge-1.png" alt="Tribal Knowledge Watcher" />
+<p class="sentinel-caption"><em>Tribal Knowledge Watcher, first portrait. Generated on OpenArt.</em></p>
+</div>
+<div class="sentinel-text">
+
 `TypeScript`
 
 ## What It Is
 
 A file watcher that turns a Slack screenshot into structured Markdown. Knowledge that lives in a chat thread is tribal: it is in someone's head and in a scrollback nobody will search. Drop a screenshot of the thread into a folder and the watcher transcribes it word for word, structures it, files it, and indexes it, so it can feed a retrieval engine. It is a watcher over an inbox rather than a guard over a production system: it acts on the files it finds, and on nothing else.
+
+</div>
+</div>
 
 ## How It Works
 

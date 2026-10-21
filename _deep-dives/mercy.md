@@ -3,7 +3,6 @@
 <div class="sentinel-row">
 <div class="sentinel-media sentinel-media-wide">
 <img src="_design/final/mercy/mercy-1.png" alt="Mercy" />
-<video src="_design/final/mercy/mercy-1.mp4" poster="_design/final/mercy/mercy-1.png" controls muted loop playsinline preload="metadata"></video>
 <p class="sentinel-caption"><em>Mercy, first portrait. Generated on OpenArt.</em></p>
 </div>
 <div class="sentinel-text">
