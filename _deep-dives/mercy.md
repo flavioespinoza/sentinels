@@ -1,4 +1,4 @@
-# Mercy
+# Mercy `JavaScript`
 
 <div class="sentinel-row sentinel-row-3">
 <div class="sentinel-media sentinel-media-wide">
@@ -7,11 +7,13 @@
 </div>
 <div class="sentinel-text">
 
-`JavaScript`
+## I Watch The Exchange Feed
 
-## What It Is
+The oldest watcher in the set, a Node process inside eScanner, a market scanner.
 
-The oldest watcher in the set, a Node process inside eScanner, a market scanner. Mercy subscribes to an exchange's websocket and keeps an eye on candles, the order book, and trades across every market quoted in BTC, ETH, USDT, or USD, mirroring what it sees into Elasticsearch and logging its own connection trouble to MongoDB. It predates the three rules on the front page and is listed here as the ancestor of the rest: the first time a process was posted outside the trading logic to watch a market and write down what it saw.
+It mirrors an exchange's candles, order book, and trades into Elasticsearch, market by market.
+
+It predates the three rules. It is the ancestor of the rest.
 
 </div>
 <div class="sentinel-media sentinel-media-wide">
@@ -21,6 +23,8 @@ The oldest watcher in the set, a Node process inside eScanner, a market scanner.
 </div>
 
 ## How It Works
+
+Mercy subscribes to an exchange's websocket and keeps an eye on candles, the order book, and trades across every market quoted in BTC, ETH, USDT, or USD, mirroring what it sees into Elasticsearch and logging its own connection trouble to MongoDB. It predates the three rules on the front page and is listed here as the ancestor of the rest: the first time a process was posted outside the trading logic to watch a market and write down what it saw.
 
 - **`A`**: `Subscribe` -- a websocket client to HitBTC subscribes each market to candles, the order book, and trades, with 8 seconds between markets so the exchange is not flooded. It reconnects half a second after a close, and every close and error is written to MongoDB with its timestamp.
 - **`B`**: `Shard` -- the market list is split eight ways, and each process instance takes one slice by its process manager id and listens on its own port.
