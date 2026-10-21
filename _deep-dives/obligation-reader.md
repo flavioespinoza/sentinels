@@ -6,7 +6,7 @@
 
 An on-chain parity harness for the Sol Bot trading system. The engine decodes its lending positions, Kamino obligation accounts on Solana, in TypeScript from raw account bytes, with no SDK in the path. Obligation Reader decodes the same accounts a second time, in Rust with `solana-sdk`, and publishes each reading beside the engine's own value, with the delta between them. Two decoders in two languages that must agree, and a page the moment they do not.
 
-## How It Works
+## How I Work
 
 - **`A`**: `The Decode` -- `solana-sdk` reads the obligation account from the chain and decodes its fields independently of the engine's code.
 - **`B`**: `The Publish` -- each reading is published beside the engine's TypeScript value, with the delta, so the two sit side by side where a person can read them.

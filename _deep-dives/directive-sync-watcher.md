@@ -6,7 +6,7 @@
 
 A mechanical watcher that keeps a rules file in sync with the specs that govern it. A rule is written once, in a directive spec, and the watcher carries it into the section of the ruleset where it belongs, between two boundary markers, so the spec and the ruleset never drift apart. There is no AI anywhere in it: a deterministic text swap, with 28 tests. It is a watcher over a folder of specs rather than a guard over a production system: it writes into the one target file each spec names, and nothing else.
 
-## How It Works
+## How I Work
 
 - **`A`**: `Scan` -- it polls one or more specs folders for files matching `SPEC__*--directive--*.md`, every 5 minutes by default.
 - **`B`**: `Snapshot` -- it takes a SHA-256 hash of each file's content, so a change in modification time alone is ignored.

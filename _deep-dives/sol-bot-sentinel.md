@@ -22,7 +22,7 @@ It holds no key. It cannot place, change, or close a trade. It reads the live fe
 </div>
 </div>
 
-## How It Works
+## How I Work
 
 Sol Bot is a pair of automated trading bots that run for a private client on a public blockchain. One bot trades when the trend is long, the other when it is short, and each one borrows against collateral on a lending protocol, so a mistake costs real money and can cost it quickly. The engine carries its own layers against that: key custody in a policy signer, a position cap, a risk watcher, heartbeats, and a dead-man's switch on another machine.
 
@@ -34,7 +34,7 @@ For where this sits in the whole system, read [how the security is layered](../_
 
 Built Oct 05 2026 with Claude Code agents and deployed the same day: it runs on Cloud Run as one always-on instance and reads the production engine's feed over the private network, every 15 seconds, since 4:28 PM (MDT) on Oct 05 2026. By default a fresh checkout runs against a scripted market; `Source` set to `http` is the deployed configuration. Paging is wired: the deployed service reads its Pushover token and user from Secret Manager, so an alert pages Flavio's devices as well as being logged and served.
 
-### The Three Watchers
+### The Three Things I Check
 
 Each watcher is one class and one hosted background service in the same process. A new watcher is one more class and one line in `Program.cs`.
 

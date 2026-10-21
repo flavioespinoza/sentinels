@@ -6,7 +6,7 @@
 
 A stale-and-flat candle daemon for the Sol Bot trading system. The engine builds its own candles from on-chain reads every minute, and every decision downstream assumes those candles keep arriving and keep moving. Candle Watch asks that one question, per market, all the time, and pages when the answer changes. It never repairs a feed and never trades.
 
-## How It Works
+## How I Work
 
 - **`A`**: `The Read` -- a `tokio` daemon with a `mongodb` client reads the newest candles per market.
 - **`B`**: `The State Machine` -- one per market, with four states: ok, stale (the candles stopped arriving), flat (the candles arrive but do not move), and unreadable (the read itself failed).
