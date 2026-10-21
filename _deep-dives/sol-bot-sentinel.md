@@ -7,7 +7,7 @@
 </div>
 <div class="sentinel-text">
 
-## What It Is
+## I Watch The Trading Bots
 
 Sol Bot is a pair of trading bots that borrow against collateral. A mistake costs real money, fast.
 

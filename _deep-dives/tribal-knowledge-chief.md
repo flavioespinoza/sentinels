@@ -7,7 +7,7 @@
 </div>
 <div class="sentinel-text">
 
-## What It Is
+## I Watch The Screenshot Inbox
 
 A file watcher that turns a Slack screenshot into structured Markdown.
 
