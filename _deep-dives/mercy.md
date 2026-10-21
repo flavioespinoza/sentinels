@@ -1,24 +1,18 @@
-# Mercy `JavaScript`
-
-<div class="sentinel-row sentinel-row-3">
-<div class="sentinel-media sentinel-media-wide">
+<div class="sentinel-row">
+<div class="sentinel-media">
 <img src="_design/final/mercy/mercy-1.png" alt="Mercy, opening frame" />
 <p class="sentinel-caption"><em>Created with OpenArt AI</em></p>
 </div>
 <div class="sentinel-text">
 
-## I Watch The Exchange Feed
+# Mercy `JavaScript`
 
-The oldest watcher in the set, a Node process inside eScanner, a market scanner. It is the ancestor of the rest. It was the first process set outside the trading logic to watch a market and write down what it saw.
+An older Node watcher that lives inside eScanner. eScanner is a market scanner, and Mercy is the oldest watcher in the set, the ancestor of the rest. It was the first process set outside the trading logic to watch a market and write down what it saw.
 
 It mirrors HitBTC's candles, order book, and trades into Elasticsearch, market by market. It waits 8 seconds between markets so the exchange is not flooded. It logs its own connection trouble to MongoDB.
 
 It splits the markets eight ways. Each process takes one slice.
 
-</div>
-<div class="sentinel-media sentinel-media-wide">
-<img src="_design/final/mercy/mercy-last.png" alt="Mercy, last frame" />
-<p class="sentinel-caption"><em>Created with OpenArt AI</em></p>
 </div>
 </div>
 
@@ -45,3 +39,8 @@ Mirroring a live exchange feed into a store that can be queried and charted, acr
 ## Status
 
 Older code; lives in its home repo, eScanner. It reads exchange credentials from the environment to list the markets, which the newer sentinels would not do; in this file that listing is the only call made with them.
+
+<div class="sentinel-closing">
+<img src="_design/final/mercy/mercy-last.png" alt="Mercy, last frame" />
+<p class="sentinel-caption"><em>Created with OpenArt AI</em></p>
+</div>
