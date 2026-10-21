@@ -9,11 +9,9 @@
 
 ## I Watch The Trading Bots
 
-Sol Bot is a pair of trading bots that borrow against collateral. A mistake costs real money, fast.
+Sol Bot is a pair of trading bots that borrow against collateral. A mistake costs real money, fast. The quiet failure is a trend flip a bot does not act on. This sentinel checks for it, and for risk lines and silent bots.
 
-The quiet failure is a trend flip that a bot does not act on. This sentinel checks for it, and for risk lines and silent bots.
-
-It reads a feed and holds no key. It cannot trade.
+It holds no key and cannot trade. It reads the live feed every 15 seconds. Its first run caught a restart bug in the engine.
 
 </div>
 <div class="sentinel-media sentinel-media-wide">
