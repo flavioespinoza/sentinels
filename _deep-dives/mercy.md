@@ -11,9 +11,9 @@
 
 The oldest watcher in the set, a Node process inside eScanner, a market scanner.
 
-It mirrors an exchange's candles, order book, and trades into Elasticsearch, market by market.
+It mirrors HitBTC's candles, order book, and trades into Elasticsearch, market by market.
 
-It predates the three rules. It is the ancestor of the rest.
+It splits the markets eight ways. It is the ancestor of the rest.
 
 </div>
 <div class="sentinel-media sentinel-media-wide">
