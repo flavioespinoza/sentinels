@@ -50,6 +50,20 @@
 			.markdown-section .sentinel-text > :first-child {
 				margin-top: 0;
 			}
+			/* A finished sentinel: opening frame, text, last frame. */
+			.sentinel-row-3 .sentinel-media {
+				flex: 0 0 240px;
+				width: 240px;
+			}
+			@media (max-width: 900px) {
+				.sentinel-row-3 {
+					flex-wrap: wrap;
+				}
+				.sentinel-row-3 .sentinel-text {
+					flex: 1 1 100%;
+					order: 1;
+				}
+			}
 			@media (max-width: 640px) {
 				.sentinel-row {
 					flex-direction: column;
@@ -58,6 +72,19 @@
 				.sentinel-media-wide {
 					width: 100%;
 					max-width: 320px;
+				}
+				.sentinel-row-3 {
+					flex-wrap: nowrap;
+				}
+				.sentinel-row-3 .sentinel-media {
+					flex: 0 0 auto;
+					width: 100%;
+					max-width: 320px;
+				}
+				.sentinel-row-3 .sentinel-text {
+					flex: 0 0 auto;
+					width: 100%;
+					order: 0;
 				}
 			}
 		</style>
