@@ -3,7 +3,7 @@
 <div class="sentinel-row sentinel-row-3">
 <div class="sentinel-media sentinel-media-wide">
 <img src="_design/final/tribal-knowledge/tribal-knowledge-1.png" alt="Tribal Knowledge Watcher, opening frame" />
-<p class="sentinel-caption"><em>Tribal Knowledge Watcher, first portrait. Generated on OpenArt.</em></p>
+<p class="sentinel-caption"><em>Created with OpenArt AI</em></p>
 </div>
 <div class="sentinel-text">
 
@@ -16,7 +16,7 @@ A file watcher that turns a Slack screenshot into structured Markdown. Knowledge
 </div>
 <div class="sentinel-media sentinel-media-wide">
 <img src="_design/final/tribal-knowledge/tribal-knowledge-last.png" alt="Tribal Knowledge Watcher, last frame" />
-<p class="sentinel-caption"><em>Last frame.</em></p>
+<p class="sentinel-caption"><em>Created with OpenArt AI</em></p>
 </div>
 </div>
 

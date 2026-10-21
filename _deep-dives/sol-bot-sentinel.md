@@ -3,7 +3,7 @@
 <div class="sentinel-row sentinel-row-3">
 <div class="sentinel-media sentinel-media-wide">
 <img src="_design/final/sol-bot-sentinel/sol-bot-sentinel-1.png" alt="Sol Bot Sentinel, opening frame" />
-<p class="sentinel-caption"><em>Sol Bot Sentinel, first portrait. Generated on OpenArt.</em></p>
+<p class="sentinel-caption"><em>Created with OpenArt AI</em></p>
 </div>
 <div class="sentinel-text">
 
@@ -18,7 +18,7 @@ The one failure those layers do not catch is the quiet one. The trend flips and 
 </div>
 <div class="sentinel-media sentinel-media-wide">
 <img src="_design/final/sol-bot-sentinel/sol-bot-sentinel-last.png" alt="Sol Bot Sentinel, last frame" />
-<p class="sentinel-caption"><em>Last frame.</em></p>
+<p class="sentinel-caption"><em>Created with OpenArt AI</em></p>
 </div>
 </div>
 
