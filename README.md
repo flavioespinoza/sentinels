@@ -22,7 +22,7 @@ Each sentinel is meant to stand on its own, with its own build and its own tests
 
 <div class="sentinel-row">
 <div class="sentinel-media">
-<img src="_design/final/sol-bot-sentinal/sol-bot-sentinal-1.png" alt="Sol Bot Sentinel" />
+<img src="_design/final/sol-bot-sentinel/sol-bot-sentinel-1.png" alt="Sol Bot Sentinel" />
 </div>
 <div class="sentinel-text">
 
