@@ -3,7 +3,6 @@
 <div class="sentinel-row">
 <div class="sentinel-media sentinel-media-wide">
 <img src="_design/final/sol-bot-sentinel/sol-bot-sentinel-1.png" alt="Sol Bot Sentinel" />
-<video src="_design/final/sol-bot-sentinel/sol-bot-sentinel-1.mp4" poster="_design/final/sol-bot-sentinel/sol-bot-sentinel-1.png" controls muted loop playsinline preload="metadata"></video>
 <p class="sentinel-caption"><em>Sol Bot Sentinel, first portrait. Generated on OpenArt.</em></p>
 </div>
 <div class="sentinel-text">
