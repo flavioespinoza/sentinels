@@ -6,10 +6,125 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="description" content="Independent, read-only watchdogs over production systems." />
 		<!-- Docsify serves the README and the _deep-dives pages as a site on GitHub Pages; nothing is built. -->
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4.13.1/lib/themes/dark.css" />
+		<!-- vue.css for the shell, sidebar, and search; GitHub's own stylesheet for the content. -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4.13.1/lib/themes/vue.css" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@5.8.1/github-markdown-light.css" />
 		<style>
 			:root {
-				--theme-color: #f59e0b;
+				--theme-color: #0969da;
+			}
+			/* Content reads like a README on github.com: GitHub's rules win over vue.css. */
+			.markdown-section.markdown-body {
+				max-width: 980px;
+				padding: 32px 32px 48px;
+			}
+			.markdown-section.markdown-body a {
+				color: #0969da;
+				font-weight: normal;
+			}
+			/* docsify wraps heading text in a.anchor, which GitHub floats into the margin as a link icon. */
+			.markdown-section.markdown-body .anchor,
+			.markdown-section.markdown-body .anchor span {
+				color: inherit;
+				float: none;
+				font-weight: inherit;
+				line-height: inherit;
+				margin-left: 0;
+				padding-right: 0;
+			}
+			.markdown-section.markdown-body h1,
+			.markdown-section.markdown-body h2,
+			.markdown-section.markdown-body h3,
+			.markdown-section.markdown-body h4,
+			.markdown-section.markdown-body h5,
+			.markdown-section.markdown-body h6,
+			.markdown-section.markdown-body strong {
+				color: #1f2328;
+			}
+			.markdown-section.markdown-body h1,
+			.markdown-section.markdown-body h2 {
+				margin: 24px 0 16px;
+			}
+			.markdown-section.markdown-body h3 {
+				margin: 24px 0 16px;
+			}
+			.markdown-section.markdown-body em {
+				color: inherit;
+			}
+			.markdown-section.markdown-body p,
+			.markdown-section.markdown-body ol,
+			.markdown-section.markdown-body ul {
+				line-height: 1.5;
+				word-spacing: normal;
+			}
+			.markdown-section.markdown-body p {
+				margin: 0 0 16px;
+			}
+			.markdown-section.markdown-body ol,
+			.markdown-section.markdown-body ul {
+				padding-left: 2em;
+			}
+			.markdown-section.markdown-body blockquote {
+				border-left: 0.25em solid #d1d9e0;
+				color: #59636e;
+				margin: 0 0 16px;
+				padding: 0 1em;
+			}
+			.markdown-section.markdown-body blockquote p {
+				font-weight: normal;
+			}
+			.markdown-section.markdown-body hr {
+				border: 0;
+				border-bottom: 0;
+				margin: 24px 0;
+			}
+			.markdown-section.markdown-body table {
+				display: block;
+				width: max-content;
+				max-width: 100%;
+			}
+			.markdown-section.markdown-body tr {
+				border-top: 1px solid #d1d9e0b3;
+			}
+			.markdown-section.markdown-body td,
+			.markdown-section.markdown-body th {
+				border: 1px solid #d1d9e0;
+				padding: 6px 13px;
+			}
+			.markdown-section.markdown-body th {
+				font-weight: 600;
+			}
+			.markdown-section.markdown-body code,
+			.markdown-section.markdown-body pre {
+				font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+			}
+			.markdown-section.markdown-body code {
+				background-color: #818b981f;
+				border-radius: 6px;
+				color: inherit;
+				font-size: 85%;
+				margin: 0;
+				padding: 0.2em 0.4em;
+				white-space: break-spaces;
+			}
+			.markdown-section.markdown-body pre {
+				background-color: #f6f8fa;
+				border-radius: 6px;
+				line-height: 1.45;
+				margin: 0 0 16px;
+				padding: 16px;
+			}
+			.markdown-section.markdown-body pre > code {
+				background: transparent;
+				color: #1f2328;
+				font-size: 100%;
+				line-height: inherit;
+				margin: 0;
+				padding: 0;
+				white-space: pre;
+			}
+			.markdown-section.markdown-body pre::after {
+				content: none;
 			}
 			.markdown-section img {
 				max-width: 420px;
@@ -51,9 +166,10 @@
 				margin-top: 0;
 			}
 			/* The language rides beside the title as a small badge. */
-			.markdown-section h1 code {
+			.markdown-section.markdown-body h1 code {
 				font-size: 0.45em;
 				font-weight: normal;
+				padding: 0.2em 0.4em;
 				vertical-align: middle;
 				white-space: nowrap;
 			}
@@ -104,6 +220,15 @@
 				// relativePath reads a sidebar per folder; every folder uses the one at the root.
 				alias: { "/.*/_sidebar.md": "/_sidebar.md" },
 				search: { placeholder: "Search the sentinels", noData: "No match" },
+				// Every route gets GitHub's markdown-body class, so github-markdown-css styles the content.
+				plugins: [
+					function (hook) {
+						hook.doneEach(function () {
+							var section = document.querySelector(".markdown-section");
+							if (section) section.classList.add("markdown-body");
+						});
+					},
+				],
 			};
 		</script>
 		<script src="https://cdn.jsdelivr.net/npm/docsify@4.13.1/lib/docsify.min.js"></script>
