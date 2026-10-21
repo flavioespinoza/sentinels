@@ -9,9 +9,9 @@
 
 ## I Watch The Screenshot Inbox
 
-A file watcher that turns a Slack screenshot into structured Markdown for a retrieval engine.
+Knowledge in a chat thread is tribal. It lives in someone's head and in a scrollback nobody will search. This file watcher turns a Slack screenshot into Markdown for a retrieval engine.
 
-Drop a screenshot in a folder. Gemini transcribes it word for word, then it is filed and indexed.
+Drop a screenshot in a folder. Gemini transcribes it word for word. Then Gemini sorts it into a topic, a summary, takeaways, and actions. The note is filed and indexed.
 
 It acts only on the files it finds. War drums play when a note lands.
 
