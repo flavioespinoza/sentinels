@@ -1,26 +1,30 @@
-# Tribal Knowledge Watcher
+# Tribal Knowledge Chief `TypeScript`
 
 <div class="sentinel-row sentinel-row-3">
 <div class="sentinel-media sentinel-media-wide">
-<img src="_design/final/tribal-knowledge/tribal-knowledge-1.png" alt="Tribal Knowledge Watcher, opening frame" />
+<img src="_design/final/tribal-knowledge/tribal-knowledge-1.png" alt="Tribal Knowledge Chief, opening frame" />
 <p class="sentinel-caption"><em>Created with OpenArt AI</em></p>
 </div>
 <div class="sentinel-text">
 
-`TypeScript`
-
 ## What It Is
 
-A file watcher that turns a Slack screenshot into structured Markdown. Knowledge that lives in a chat thread is tribal: it is in someone's head and in a scrollback nobody will search. Drop a screenshot of the thread into a folder and the watcher transcribes it word for word, structures it, files it, and indexes it, so it can feed a retrieval engine. It is a watcher over an inbox rather than a guard over a production system: it acts on the files it finds, and on nothing else.
+A file watcher that turns a Slack screenshot into structured Markdown.
+
+Drop a screenshot in a folder. It is transcribed word for word, filed, and indexed.
+
+It acts on the files it finds, and on nothing else.
 
 </div>
 <div class="sentinel-media sentinel-media-wide">
-<img src="_design/final/tribal-knowledge/tribal-knowledge-last.png" alt="Tribal Knowledge Watcher, last frame" />
+<img src="_design/final/tribal-knowledge/tribal-knowledge-last.png" alt="Tribal Knowledge Chief, last frame" />
 <p class="sentinel-caption"><em>Created with OpenArt AI</em></p>
 </div>
 </div>
 
 ## How It Works
+
+Knowledge that lives in a chat thread is tribal: it is in someone's head and in a scrollback nobody will search. Drop a screenshot of the thread into a folder and the watcher transcribes it word for word, structures it, files it, and indexes it, so it can feed a retrieval engine. It is a watcher over an inbox rather than a guard over a production system.
 
 The engine runs from its own repo. A target project gets only a lean output folder: the Markdown, an index, and an `images/` inbox with a `done/` archive, no source and no `node_modules`. Drop an image into `images/`, any name, any format, and the pipeline runs on its own:
 

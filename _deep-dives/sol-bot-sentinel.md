@@ -1,4 +1,4 @@
-# Sol Bot Sentinel
+# Sol Bot Sentinel `C# + ASP.NET Core`
 
 <div class="sentinel-row sentinel-row-3">
 <div class="sentinel-media sentinel-media-wide">
@@ -7,13 +7,13 @@
 </div>
 <div class="sentinel-text">
 
-`C# + ASP.NET Core`
-
 ## What It Is
 
-Sol Bot is a pair of automated trading bots that run for a private client on a public blockchain. One bot trades when the trend is long, the other when it is short, and each one borrows against collateral on a lending protocol, so a mistake costs real money and can cost it quickly. The engine carries its own layers against that: key custody in a policy signer, a position cap, a risk watcher, heartbeats, and a dead-man's switch on another machine.
+Sol Bot is a pair of trading bots that borrow against collateral. A mistake costs real money, fast.
 
-The one failure those layers do not catch is the quiet one. The trend flips and a bot does not act. Nothing is down, nothing is over a line, and the position is simply wrong. Sol Bot Sentinel is the check for that, and for two more things while it is looking: an open position riding through a risk line, and a bot stepping outside its own limits or going silent. It reads a feed the engine serves for this purpose and nothing else. It cannot place, change, or close a trade, and it holds no key.
+The quiet failure is a trend flip that a bot does not act on. This sentinel checks for it, and for risk lines and silent bots.
+
+It reads a feed and holds no key. It cannot trade.
 
 </div>
 <div class="sentinel-media sentinel-media-wide">
@@ -23,6 +23,10 @@ The one failure those layers do not catch is the quiet one. The trend flips and 
 </div>
 
 ## How It Works
+
+Sol Bot is a pair of automated trading bots that run for a private client on a public blockchain. One bot trades when the trend is long, the other when it is short, and each one borrows against collateral on a lending protocol, so a mistake costs real money and can cost it quickly. The engine carries its own layers against that: key custody in a policy signer, a position cap, a risk watcher, heartbeats, and a dead-man's switch on another machine.
+
+The one failure those layers do not catch is the quiet one. The trend flips and a bot does not act. Nothing is down, nothing is over a line, and the position is simply wrong. Sol Bot Sentinel is the check for that, and for two more things while it is looking: an open position riding through a risk line, and a bot stepping outside its own limits or going silent. It reads a feed the engine serves for this purpose and nothing else. It cannot place, change, or close a trade, and it holds no key.
 
 An independent, read-only sentinel for the Sol Bot auto-traders, written in C# on ASP.NET Core. It watches the bots from outside and raises an alert when a position crosses a risk line, a bot steps outside its limits, or the trend flips and a bot does not act. It cannot place, change, or close a trade.
 
