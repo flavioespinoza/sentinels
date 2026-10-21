@@ -1,8 +1,8 @@
 # Sol Bot Sentinel
 
-<div class="sentinel-row">
+<div class="sentinel-row sentinel-row-3">
 <div class="sentinel-media sentinel-media-wide">
-<img src="_design/final/sol-bot-sentinel/sol-bot-sentinel-1.png" alt="Sol Bot Sentinel" />
+<img src="_design/final/sol-bot-sentinel/sol-bot-sentinel-1.png" alt="Sol Bot Sentinel, opening frame" />
 <p class="sentinel-caption"><em>Sol Bot Sentinel, first portrait. Generated on OpenArt.</em></p>
 </div>
 <div class="sentinel-text">
@@ -15,6 +15,10 @@ Sol Bot is a pair of automated trading bots that run for a private client on a p
 
 The one failure those layers do not catch is the quiet one. The trend flips and a bot does not act. Nothing is down, nothing is over a line, and the position is simply wrong. Sol Bot Sentinel is the check for that, and for two more things while it is looking: an open position riding through a risk line, and a bot stepping outside its own limits or going silent. It reads a feed the engine serves for this purpose and nothing else. It cannot place, change, or close a trade, and it holds no key.
 
+</div>
+<div class="sentinel-media sentinel-media-wide">
+<img src="_design/final/sol-bot-sentinel/sol-bot-sentinel-last.png" alt="Sol Bot Sentinel, last frame" />
+<p class="sentinel-caption"><em>Last frame.</em></p>
 </div>
 </div>
 

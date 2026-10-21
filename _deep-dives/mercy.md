@@ -1,8 +1,8 @@
 # Mercy
 
-<div class="sentinel-row">
+<div class="sentinel-row sentinel-row-3">
 <div class="sentinel-media sentinel-media-wide">
-<img src="_design/final/mercy/mercy-1.png" alt="Mercy" />
+<img src="_design/final/mercy/mercy-1.png" alt="Mercy, opening frame" />
 <p class="sentinel-caption"><em>Mercy, first portrait. Generated on OpenArt.</em></p>
 </div>
 <div class="sentinel-text">
@@ -13,6 +13,10 @@
 
 The oldest watcher in the set, a Node process inside eScanner, a market scanner. Mercy subscribes to an exchange's websocket and keeps an eye on candles, the order book, and trades across every market quoted in BTC, ETH, USDT, or USD, mirroring what it sees into Elasticsearch and logging its own connection trouble to MongoDB. It predates the three rules on the front page and is listed here as the ancestor of the rest: the first time a process was posted outside the trading logic to watch a market and write down what it saw.
 
+</div>
+<div class="sentinel-media sentinel-media-wide">
+<img src="_design/final/mercy/mercy-last.png" alt="Mercy, last frame" />
+<p class="sentinel-caption"><em>Last frame.</em></p>
 </div>
 </div>
 
