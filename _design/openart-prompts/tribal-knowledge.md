@@ -1,4 +1,4 @@
-# OpenArt Prompt -- Tribal Knowledge Watcher
+# OpenArt Prompt -- Tribal Knowledge
 
 Accent: cyan `#22d3ee`
 Aspect ratio: 3:4
@@ -14,7 +14,7 @@ See `README.md` in this directory.
 ## Character Block
 
 ```txt
-Tribal Knowledge Watcher. A signal-intercepting mech. The helmet is wide and rectangular, wider than it is tall, with a satellite dish or parabolic antenna mounted on top -- the antenna is the character's crown, a mechanical receiver aimed upward and slightly forward as if capturing something from the air. The eye is a triangle, an upward-pointing chevron or delta shape, glowing cyan (#22d3ee), set in the lower half of the face plate. Clean angular panel lines on the helmet, TypeScript-language emblem as a circuit-board trace on the right shoulder pauldron. The overall silhouette reads tall because of the antenna above the helmet. The stance is alert and slightly angled, as if tracking something just off-frame. Accent glow: cyan, eye and faint antenna edge.
+Tribal Knowledge. A signal-intercepting mech. The helmet is wide and rectangular, wider than it is tall, with a satellite dish or parabolic antenna mounted on top -- the antenna is the character's crown, a mechanical receiver aimed upward and slightly forward as if capturing something from the air. The eye is a triangle, an upward-pointing chevron or delta shape, glowing cyan (#22d3ee), set in the lower half of the face plate. Clean angular panel lines on the helmet, TypeScript-language emblem as a circuit-board trace on the right shoulder pauldron. The overall silhouette reads tall because of the antenna above the helmet. The stance is alert and slightly angled, as if tracking something just off-frame. Accent glow: cyan, eye and faint antenna edge.
 ```
 
 **Negative prompt:** organic shapes, human face, hair, skin, plants, bright environment, white background, watermark, text, cartoon, anime

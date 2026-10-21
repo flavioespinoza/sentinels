@@ -1,4 +1,4 @@
 - [The Sentinels](/README.md)
 - [Sol Bot Sentinel](/_deep-dives/sol-bot-sentinel.md)
-- [Tribal Knowledge Chief](/_deep-dives/tribal-knowledge-chief.md)
+- [Tribal Knowledge](/_deep-dives/tribal-knowledge.md)
 - [Mercy](/_deep-dives/mercy.md)

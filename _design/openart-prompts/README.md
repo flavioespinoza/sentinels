@@ -23,7 +23,7 @@ Dark sci-fi concept art, hard-surface mech design, single character study, full 
 | 3 | candle-watch | warm orange `#fb923c` | lantern hanging from left shoulder |
 | 4 | obligation-reader | jade `#34d399` | ledger plate on chest; diamond-shaped eye |
 | 5 | corpus-sentinel | violet-purple `#a78bfa` | arch-shaped helmet like a gate |
-| 6 | tribal-knowledge-watcher | cyan `#22d3ee` | dish antenna on helmet |
+| 6 | tribal-knowledge | cyan `#22d3ee` | dish antenna on helmet |
 | 7 | directive-sync-watcher | violet `#8b5cf6` | pointed angular helmet with spike |
 | 8 | veritas-sentinel | red `#ef4444` | large circular camera-lens eye; recording lights on shoulders |
 | 9 | mercy | soft green `#4ade80` | medic cross on forehead; two visible eyes; shorter proportions |

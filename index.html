@@ -62,15 +62,13 @@
 				flex: 0 0 240px;
 				width: 240px;
 			}
-			@media (max-width: 900px) {
-				.sentinel-row-3 {
-					flex-wrap: wrap;
-				}
-				.sentinel-row-3 .sentinel-text {
-					flex: 1 1 100%;
-					order: 1;
+			/* Middle widths: drop the opening frame, text beside the last frame. */
+			@media (min-width: 641px) and (max-width: 1322px) {
+				.sentinel-row-3 .sentinel-media:first-child {
+					display: none;
 				}
 			}
+			/* Mobile: everything stacks in source order. */
 			@media (max-width: 640px) {
 				.sentinel-row {
 					flex-direction: column;
@@ -80,9 +78,6 @@
 					width: 100%;
 					max-width: 320px;
 				}
-				.sentinel-row-3 {
-					flex-wrap: nowrap;
-				}
 				.sentinel-row-3 .sentinel-media {
 					flex: 0 0 auto;
 					width: 100%;
@@ -91,7 +86,6 @@
 				.sentinel-row-3 .sentinel-text {
 					flex: 0 0 auto;
 					width: 100%;
-					order: 0;
 				}
 			}
 		</style>

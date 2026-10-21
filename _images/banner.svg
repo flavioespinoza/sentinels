@@ -56,7 +56,7 @@
 <path d="M702,182 L702,159 A18,15 0 0 1 738,159 L738,182 Z" fill="#1c2235"/>
 <circle cx="720" cy="170" r="6" fill="#a78bfa" filter="url(#g)" opacity="0.85"/>
 
-<!-- 6: tribal-knowledge-watcher cyan #22d3ee -- wide head + antenna -->
+<!-- 6: tribal-knowledge cyan #22d3ee -- wide head + antenna -->
 <rect x="866" y="198" width="28" height="192" fill="#1c2235"/>
 <rect x="854" y="182" width="52" height="20" rx="2" fill="#202840"/>
 <rect x="852" y="148" width="56" height="36" rx="3" fill="#202840"/>

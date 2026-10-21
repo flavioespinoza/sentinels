@@ -36,7 +36,7 @@ Per-sentinel accent tokens:
 | Candle Watch | `--accent-orange` | `#fb923c` |
 | Obligation Reader | `--accent-jade` | `#34d399` |
 | Corpus Sentinel | `--accent-purple` | `#a78bfa` |
-| Tribal Knowledge Watcher | `--accent-cyan` | `#22d3ee` |
+| Tribal Knowledge | `--accent-cyan` | `#22d3ee` |
 | Directive Sync Watcher | `--accent-violet` | `#8b5cf6` |
 | Veritas Sentinel | `--accent-red` | `#ef4444` |
 | Mercy | `--accent-green` | `#4ade80` |

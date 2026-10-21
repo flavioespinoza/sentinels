@@ -9,11 +9,11 @@
 
 ## I Watch The Exchange Feed
 
-The oldest watcher in the set, a Node process inside eScanner, a market scanner.
+The oldest watcher in the set, a Node process inside eScanner, a market scanner. It is the ancestor of the rest. It was the first process set outside the trading logic to watch a market and write down what it saw.
 
-It mirrors HitBTC's candles, order book, and trades into Elasticsearch, market by market.
+It mirrors HitBTC's candles, order book, and trades into Elasticsearch, market by market. It waits 8 seconds between markets so the exchange is not flooded. It logs its own connection trouble to MongoDB.
 
-It splits the markets eight ways. It is the ancestor of the rest.
+It splits the markets eight ways. Each process takes one slice.
 
 </div>
 <div class="sentinel-media sentinel-media-wide">
