@@ -2,6 +2,8 @@
 
 Independent, read-only watchdogs over production systems, each written in the language that fits its host. Built by Flavio Espinoza, every one of them with a Claude Code agent at the keyboard.
 
+**Docs site:** [flavioespinoza.github.io/sentinels](https://flavioespinoza.github.io/sentinels/)
+
 ## What A Sentinel Is
 
 A sentinel is a guard posted outside a system to watch it and raise the alarm. It never acts. It reads what the system exposes, compares it against a line drawn in advance, and the moment the line is crossed it pages a person. Then it goes back to watching.
@@ -30,7 +32,7 @@ Each sentinel is meant to stand on its own, with its own build and its own tests
 
 **Status:** deployed on production, on Cloud Run, since Oct 05 2026.
 
-An independent watchdog over a pair of live auto-traders that run for a private client on a public blockchain. Three hosted watchers read the engine's feed every 15 seconds: one for the trend flip a bot failed to act on, one for an open position crossing a risk line, and one for a bot stepping outside its own limits or going quiet. On its first run against the production feed it caught a restart replaying months-old trend flips into new bots.
+Every 15 seconds it reads the feed of two live auto-traders and pages a phone on a missed trend flip, a position past a risk line, or a bot out of bounds or gone quiet.
 
 [Deep dive: Sol Bot Sentinel](_deep-dives/sol-bot-sentinel.md)
 
@@ -49,7 +51,7 @@ An independent watchdog over a pair of live auto-traders that run for a private 
 
 **Status:** running in tests; the graph scheduler is a stub; code in a private repo, to be rebuilt here from source.
 
-The real-time audio engine under a home security sentry: a node graph, parameters with two-stage smoothing, and a BiQuad filter on Transposed Direct Form II that allocates nothing in the hot path. Thirteen DSP tests, from impulse response to a single-bin DFT, and a benchmark that defeats dead-code elimination. The filter is real and tested; the graph scheduler is still a stub, and its page says so.
+The real-time audio engine under a home security sentry. Its sound filter is real and tested, and its graph scheduler is still a stub.
 
 [Deep dive: Sentry Engine](_deep-dives/sentry-engine.md)
 
@@ -68,7 +70,7 @@ The real-time audio engine under a home security sentry: a node graph, parameter
 
 **Status:** specified; build in progress; code in a private repo, to be moved here.
 
-A small daemon that asks one question of every market: are the candles still arriving? It reads the newest candles per market, runs a per-market state machine (ok, stale, flat, unreadable), and pages on a transition and once on recovery. It never repairs and never trades.
+Watches every market for candles that stop arriving, go flat, or cannot be read. It pages when a market goes wrong and once when it recovers, and never repairs or trades.
 
 [Deep dive: Candle Watch](_deep-dives/candle-watch.md)
 
@@ -87,7 +89,7 @@ A small daemon that asks one question of every market: are the candles still arr
 
 **Status:** specified; build in progress; code in a private repo, to be moved here.
 
-A second pair of eyes on an on-chain position. It decodes the lending protocol's obligation accounts in Rust with `solana-sdk` and publishes each reading beside the value the engine's own TypeScript decoder produced, with the delta. It pages on divergence and is never a decision input.
+Reads a lending position straight from the chain and sets each reading beside the engine's own number. When the two disagree it pages a person, and it never feeds a decision.
 
 [Deep dive: Obligation Reader](_deep-dives/obligation-reader.md)
 
@@ -106,7 +108,7 @@ A second pair of eyes on an on-chain position. It decodes the lending protocol's
 
 **Status:** designed; first pieces building; code in a private repo, to be moved here.
 
-A small, hard front door for a retrieval engine that must stay loaded in memory. An `axum` service carries the bearer-token auth, the rate limit, the health route, and the private firewall boundary, and passes everything else through to the engine on localhost. The matrix stays loaded while the surface stays small.
+A small, hard front door for a retrieval engine that must stay loaded in memory. It turns away callers with no token or over the rate limit and passes the rest to the engine.
 
 [Deep dive: Corpus Sentinel](_deep-dives/corpus-sentinel.md)
 
@@ -125,7 +127,7 @@ A small, hard front door for a retrieval engine that must stay loaded in memory.
 
 **Status:** built; runs from its home repo, `watcher-tribal-knowledge`.
 
-A folder watcher that turns a Slack screenshot into structured Markdown. Drop an image in, and it renames it, transcribes it word for word with Gemini Vision, structures it with Gemini 2.5 Flash into topic, authors, summary, takeaways, and actions, and files the result under an index. Then it plays the drums and pops an alert so nobody misses it.
+Watches a folder for Slack screenshots and turns each one into structured Markdown, transcribed word for word and filed under an index. Then it plays the drums and pops an alert.
 
 [Deep dive: Tribal Knowledge Watcher](_deep-dives/tribal-knowledge-watcher.md)
 
@@ -144,7 +146,7 @@ A folder watcher that turns a Slack screenshot into structured Markdown. Drop an
 
 **Status:** built; runs from its home repo, `watcher-directive-sync`.
 
-A mechanical watcher that keeps a rules file in sync with the specs that govern it. It polls a specs folder, hashes each directive spec, waits for the file to sit still, then swaps the spec's content in between two boundary markers in the target file. No AI anywhere in it: a deterministic text swap, with 28 tests.
+Watches a folder of specs and keeps a rules file in sync with them. When a spec changes, it swaps the new text in between two markers, with no AI involved.
 
 [Deep dive: Directive Sync Watcher](_deep-dives/directive-sync-watcher.md)
 
@@ -163,7 +165,7 @@ A mechanical watcher that keeps a rules file in sync with the specs that govern 
 
 **Status:** built; lives in its home repo, `veritas-sentinel`.
 
-A black-box recorder for AI agent sessions. It tails a folder of JSONL logs by byte offset, so nothing is ever re-read, and writes every turn into a live Markdown HUD that updates in the editor as the session runs. When an assistant turn runs long with no tool call, it warns on the console.
+Watches the logs of AI agent sessions and writes every turn into a live Markdown page in the editor. When an assistant turn runs long with no tool call, it warns on the console.
 
 [Deep dive: Veritas Sentinel](_deep-dives/veritas-sentinel.md)
 
@@ -182,7 +184,7 @@ A black-box recorder for AI agent sessions. It tails a folder of JSONL logs by b
 
 **Status:** older code; lives in its home repo, eScanner.
 
-The oldest of the set, a Node watcher inside a market scanner. It subscribes to an exchange's websocket for candles, the order book, and trades across every market quoted in BTC, ETH, USDT, or USD, splits the markets across process instances, and mirrors what it sees into Elasticsearch. It predates the three rules above and is listed here as the ancestor of the rest.
+The oldest sentinel, a Node watcher that copies an exchange's candles, order book, and trades for every market quoted in BTC, ETH, USDT, or USD into Elasticsearch. It predates the three rules above.
 
 [Deep dive: Mercy](_deep-dives/mercy.md)
 
@@ -201,7 +203,7 @@ The oldest of the set, a Node watcher inside a market scanner. It subscribes to 
 
 **Status:** running as a macOS launch agent; code in its home repo, `fx-renamer`.
 
-A launchd agent that renames every screenshot the moment it lands. It waits five seconds for the capture app to finish writing, then gives the file one lowercase, sortable, timestamped name, and touches nothing that was already in the folder. The renamed file is ready to be filed into an asset store.
+Watches the screenshot folder and gives each new capture one lowercase, sortable, timestamped name, five seconds after it lands. It never touches a file that was already there.
 
 [Deep dive: FX Watch](_deep-dives/fx-watch.md)
 
