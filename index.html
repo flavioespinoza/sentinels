@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Sentinels -- Flavio Espinoza</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="Independent, read-only watchdogs over production systems." />
+		<!-- Docsify serves the README and the _deep-dives pages as a site on GitHub Pages; nothing is built. -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4.13.1/lib/themes/dark.css" />
+		<style>
+			:root {
+				--theme-color: #f59e0b;
+			}
+			.markdown-section img {
+				max-width: 420px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">Loading the sentinels…</div>
+		<script>
+			window.$docsify = {
+				name: "Sentinels",
+				repo: "flavioespinoza/sentinels",
+				loadSidebar: true,
+				subMaxLevel: 0,
+				relativePath: true,
+				auto2top: true,
+				homepage: "README.md",
+				// relativePath reads a sidebar per folder; every folder uses the one at the root.
+				alias: { "/.*/_sidebar.md": "/_sidebar.md" },
+				search: { placeholder: "Search the sentinels", noData: "No match" },
+			};
+		</script>
+		<script src="https://cdn.jsdelivr.net/npm/docsify@4.13.1/lib/docsify.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/docsify@4.13.1/lib/plugins/search.min.js"></script>
+	</body>
+</html>

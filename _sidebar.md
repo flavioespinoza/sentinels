@@ -1,0 +1,13 @@
+- [The Sentinels](/README.md)
+- AI-related
+  - [Sol Bot Sentinel](/_deep-dives/sol-bot-sentinel.md)
+  - [Veritas Sentinel](/_deep-dives/veritas-sentinel.md)
+  - [Tribal Knowledge Watcher](/_deep-dives/tribal-knowledge-watcher.md)
+- The rest of the roster
+  - [Sentry Engine](/_deep-dives/sentry-engine.md)
+  - [Candle Watch](/_deep-dives/candle-watch.md)
+  - [Obligation Reader](/_deep-dives/obligation-reader.md)
+  - [Corpus Sentinel](/_deep-dives/corpus-sentinel.md)
+  - [Directive Sync Watcher](/_deep-dives/directive-sync-watcher.md)
+  - [Mercy](/_deep-dives/mercy.md)
+  - [FX Watch](/_deep-dives/fx-watch.md)
