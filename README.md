@@ -20,7 +20,11 @@ Each sentinel is meant to stand on its own, with its own build and its own tests
 
 ### Sol Bot Sentinel
 
-![Sol Bot Sentinel](_images/sol-bot-sentinel.svg)
+<div class="sentinel-row">
+<div class="sentinel-media">
+<img src="_images/sol-bot-sentinel.svg" alt="Sol Bot Sentinel" />
+</div>
+<div class="sentinel-text">
 
 `C# + ASP.NET Core`
 
@@ -30,9 +34,16 @@ An independent watchdog over a pair of live auto-traders that run for a private 
 
 [Deep dive: Sol Bot Sentinel](_deep-dives/sol-bot-sentinel.md)
 
+</div>
+</div>
+
 ### Sentry Engine
 
-![Sentry Engine](_images/sentry-engine.svg)
+<div class="sentinel-row">
+<div class="sentinel-media">
+<img src="_images/sentry-engine.svg" alt="Sentry Engine" />
+</div>
+<div class="sentinel-text">
 
 `C++`
 
@@ -42,9 +53,16 @@ The real-time audio engine under a home security sentry: a node graph, parameter
 
 [Deep dive: Sentry Engine](_deep-dives/sentry-engine.md)
 
+</div>
+</div>
+
 ### Candle Watch
 
-![Candle Watch](_images/candle-watch.svg)
+<div class="sentinel-row">
+<div class="sentinel-media">
+<img src="_images/candle-watch.svg" alt="Candle Watch" />
+</div>
+<div class="sentinel-text">
 
 `Rust`
 
@@ -54,9 +72,16 @@ A small daemon that asks one question of every market: are the candles still arr
 
 [Deep dive: Candle Watch](_deep-dives/candle-watch.md)
 
+</div>
+</div>
+
 ### Obligation Reader
 
-![Obligation Reader](_images/obligation-reader.svg)
+<div class="sentinel-row">
+<div class="sentinel-media">
+<img src="_images/obligation-reader.svg" alt="Obligation Reader" />
+</div>
+<div class="sentinel-text">
 
 `Rust`
 
@@ -66,9 +91,16 @@ A second pair of eyes on an on-chain position. It decodes the lending protocol's
 
 [Deep dive: Obligation Reader](_deep-dives/obligation-reader.md)
 
+</div>
+</div>
+
 ### Corpus Sentinel
 
-![Corpus Sentinel](_images/corpus-sentinel.svg)
+<div class="sentinel-row">
+<div class="sentinel-media">
+<img src="_images/corpus-sentinel.svg" alt="Corpus Sentinel" />
+</div>
+<div class="sentinel-text">
 
 `Rust`
 
@@ -78,9 +110,16 @@ A small, hard front door for a retrieval engine that must stay loaded in memory.
 
 [Deep dive: Corpus Sentinel](_deep-dives/corpus-sentinel.md)
 
+</div>
+</div>
+
 ### Tribal Knowledge Watcher
 
-![Tribal Knowledge Watcher](_images/tribal-knowledge-watcher.svg)
+<div class="sentinel-row">
+<div class="sentinel-media">
+<img src="_images/tribal-knowledge-watcher.svg" alt="Tribal Knowledge Watcher" />
+</div>
+<div class="sentinel-text">
 
 `TypeScript`
 
@@ -90,9 +129,16 @@ A folder watcher that turns a Slack screenshot into structured Markdown. Drop an
 
 [Deep dive: Tribal Knowledge Watcher](_deep-dives/tribal-knowledge-watcher.md)
 
+</div>
+</div>
+
 ### Directive Sync Watcher
 
-![Directive Sync Watcher](_images/directive-sync-watcher.svg)
+<div class="sentinel-row">
+<div class="sentinel-media">
+<img src="_images/directive-sync-watcher.svg" alt="Directive Sync Watcher" />
+</div>
+<div class="sentinel-text">
 
 `TypeScript`
 
@@ -102,9 +148,16 @@ A mechanical watcher that keeps a rules file in sync with the specs that govern 
 
 [Deep dive: Directive Sync Watcher](_deep-dives/directive-sync-watcher.md)
 
+</div>
+</div>
+
 ### Veritas Sentinel
 
-![Veritas Sentinel](_images/veritas-sentinel.svg)
+<div class="sentinel-row">
+<div class="sentinel-media">
+<img src="_images/veritas-sentinel.svg" alt="Veritas Sentinel" />
+</div>
+<div class="sentinel-text">
 
 `JavaScript`
 
@@ -114,9 +167,16 @@ A black-box recorder for AI agent sessions. It tails a folder of JSONL logs by b
 
 [Deep dive: Veritas Sentinel](_deep-dives/veritas-sentinel.md)
 
+</div>
+</div>
+
 ### Mercy
 
-<img src="_design/final/mercy/mercy-1.png" alt="Mercy" width="320" />
+<div class="sentinel-row">
+<div class="sentinel-media">
+<img src="_design/final/mercy/mercy-1.png" alt="Mercy" />
+</div>
+<div class="sentinel-text">
 
 `JavaScript`
 
@@ -126,9 +186,16 @@ The oldest of the set, a Node watcher inside a market scanner. It subscribes to 
 
 [Deep dive: Mercy](_deep-dives/mercy.md)
 
+</div>
+</div>
+
 ### FX Watch
 
-![FX Watch](_images/fx-watch.svg)
+<div class="sentinel-row">
+<div class="sentinel-media">
+<img src="_images/fx-watch.svg" alt="FX Watch" />
+</div>
+<div class="sentinel-text">
 
 `Shell`
 
@@ -137,3 +204,6 @@ The oldest of the set, a Node watcher inside a market scanner. It subscribes to 
 A launchd agent that renames every screenshot the moment it lands. It waits five seconds for the capture app to finish writing, then gives the file one lowercase, sortable, timestamped name, and touches nothing that was already in the folder. The renamed file is ready to be filed into an asset store.
 
 [Deep dive: FX Watch](_deep-dives/fx-watch.md)
+
+</div>
+</div>

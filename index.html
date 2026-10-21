@@ -14,6 +14,52 @@
 			.markdown-section img {
 				max-width: 420px;
 			}
+			/* Each sentinel: image on the left, text on the right. */
+			.sentinel-row {
+				display: flex;
+				gap: 1.5rem;
+				align-items: flex-start;
+				margin-bottom: 2rem;
+			}
+			.sentinel-media {
+				flex: 0 0 auto;
+				width: 220px;
+			}
+			.sentinel-media-wide {
+				width: 300px;
+			}
+			.markdown-section .sentinel-media img,
+			.markdown-section .sentinel-media video {
+				display: block;
+				width: 100%;
+				max-width: none;
+				height: auto;
+				border-radius: 6px;
+			}
+			.markdown-section .sentinel-media video {
+				margin-top: 0.75rem;
+			}
+			.markdown-section .sentinel-caption {
+				margin: 0.5rem 0 0;
+				font-size: 0.85em;
+			}
+			.sentinel-text {
+				flex: 1;
+				min-width: 0;
+			}
+			.markdown-section .sentinel-text > :first-child {
+				margin-top: 0;
+			}
+			@media (max-width: 640px) {
+				.sentinel-row {
+					flex-direction: column;
+				}
+				.sentinel-media,
+				.sentinel-media-wide {
+					width: 100%;
+					max-width: 320px;
+				}
+			}
 		</style>
 	</head>
 	<body>
