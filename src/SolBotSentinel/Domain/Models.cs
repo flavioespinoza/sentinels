@@ -76,4 +76,6 @@ public sealed class WatchOptions
 	public long HeartbeatStaleMs { get; set; } = 60_000;
 	public long FlipGraceMs { get; set; } = 30_000;
 	public long FlipToleranceMs { get; set; } = 2_000;
+	/// <summary>How often an alert that is still active is paged again. Zero disables repeats.</summary>
+	public long RepageMs { get; set; } = 1_800_000;
 }

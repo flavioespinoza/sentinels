@@ -145,4 +145,28 @@ public class RulesTests
 		store.Clear("tallboy", RiskRules.PriceStop);
 		Assert.True(store.Raise(alert));
 	}
+
+	[Fact]
+	public void An_alert_that_stays_active_is_due_for_a_repeat_page_every_interval_until_it_clears()
+	{
+		// Oct 21 2026: flip-not-closed paged once at 6:07 PM and then went quiet while the Tallboy
+		// sat open against the trend. A page is a call for a hand, and the call repeats.
+		var store = new AlertStore();
+		var every = TimeSpan.FromMinutes(30);
+		var alert = new Alert
+		{
+			BotId = "tallboy", Watcher = "trend", Reason = TrendRules.FlipNotClosed, Detail = "x", At = T0,
+		};
+
+		Assert.True(store.Raise(alert));
+		Assert.False(store.DueForRepage("tallboy", TrendRules.FlipNotClosed, T0.AddMinutes(29), every));
+		Assert.True(store.DueForRepage("tallboy", TrendRules.FlipNotClosed, T0.AddMinutes(30), every));
+		Assert.False(store.DueForRepage("tallboy", TrendRules.FlipNotClosed, T0.AddMinutes(31), every));
+		Assert.True(store.DueForRepage("tallboy", TrendRules.FlipNotClosed, T0.AddMinutes(60), every));
+		Assert.Single(store.History);
+
+		store.Clear("tallboy", TrendRules.FlipNotClosed);
+		Assert.False(store.DueForRepage("tallboy", TrendRules.FlipNotClosed, T0.AddMinutes(120), every));
+		Assert.False(store.DueForRepage("tallboy", TrendRules.FlipNotClosed, T0.AddMinutes(120), TimeSpan.Zero));
+	}
 }
