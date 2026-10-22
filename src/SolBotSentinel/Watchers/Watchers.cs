@@ -68,6 +68,16 @@ public abstract class WatcherBase(
 			logger.LogWarning("{Watcher} {Bot} {Reason}: {Detail}", WatcherName, s.BotId, reason, detail);
 			// Raised once, so paged once. The notifier never throws.
 			_ = notifier.NotifyAsync(alert, CancellationToken.None);
+			return;
+		}
+		// Still active: page again every RepageMs while it lasts, so a condition nobody has fixed
+		// keeps calling. The repeat says how long it has been going on.
+		if (alerts.DueForRepage(s.BotId, reason, s.At, TimeSpan.FromMilliseconds(Options.RepageMs)))
+		{
+			var first = alerts.Active.FirstOrDefault(a => a.BotId == s.BotId && a.Reason == reason)?.At ?? s.At;
+			var still = alert with { Detail = $"still {reason} after {(s.At - first).TotalMinutes:0} min: {detail}" };
+			logger.LogWarning("{Watcher} {Bot} {Reason} repeated: {Detail}", WatcherName, s.BotId, reason, still.Detail);
+			_ = notifier.NotifyAsync(still, CancellationToken.None);
 		}
 	}
 }
