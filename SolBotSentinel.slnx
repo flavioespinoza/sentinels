@@ -1,8 +1,10 @@
 <Solution>
   <Folder Name="/src/">
+    <Project Path="src/SolBotJudge/SolBotJudge.csproj" />
     <Project Path="src/SolBotSentinel/SolBotSentinel.csproj" />
   </Folder>
   <Folder Name="/tests/">
+    <Project Path="tests/SolBotJudge.Tests/SolBotJudge.Tests.csproj" />
     <Project Path="tests/SolBotSentinel.Tests/SolBotSentinel.Tests.csproj" />
   </Folder>
 </Solution>

@@ -13,6 +13,7 @@ public abstract class WatcherBase(
 	IPositionSource source,
 	AlertStore alerts,
 	INotifier notifier,
+	IJudgeClient judge,
 	IOptions<WatchOptions> options,
 	TimeProvider clock,
 	ILogger logger) : BackgroundService
@@ -68,6 +69,13 @@ public abstract class WatcherBase(
 			logger.LogWarning("{Watcher} {Bot} {Reason}: {Detail}", WatcherName, s.BotId, reason, detail);
 			// Raised once, so paged once. The notifier never throws.
 			_ = notifier.NotifyAsync(alert, CancellationToken.None);
+			// Flavio, Oct 27 2026: the judge proof. The first page above is already out before the
+			// judge is called, and the call is never awaited, so a slow or dead judge cannot delay
+			// it. The judge holds no AlertStore and can only send one more page of its own.
+			if (reason == TrendRules.FlipNotClosed && Options.JudgeEnabled)
+			{
+				_ = judge.JudgeAndPageAsync(alert, CancellationToken.None);
+			}
 			return;
 		}
 		// Still active: page again every RepageMs while it lasts, so a condition nobody has fixed
@@ -87,9 +95,10 @@ public sealed class RiskWatcher(
 	IPositionSource source,
 	AlertStore alerts,
 	INotifier notifier,
+	IJudgeClient judge,
 	IOptions<WatchOptions> options,
 	TimeProvider clock,
-	ILogger<RiskWatcher> logger) : WatcherBase(source, alerts, notifier, options, clock, logger)
+	ILogger<RiskWatcher> logger) : WatcherBase(source, alerts, notifier, judge, options, clock, logger)
 {
 	private readonly Dictionary<string, DateTimeOffset> _carryBelowSince = [];
 
@@ -124,9 +133,10 @@ public sealed class ConductWatcher(
 	IPositionSource source,
 	AlertStore alerts,
 	INotifier notifier,
+	IJudgeClient judge,
 	IOptions<WatchOptions> options,
 	TimeProvider clock,
-	ILogger<ConductWatcher> logger) : WatcherBase(source, alerts, notifier, options, clock, logger)
+	ILogger<ConductWatcher> logger) : WatcherBase(source, alerts, notifier, judge, options, clock, logger)
 {
 	private static readonly string[] All =
 		[ConductRules.CapExceeded, ConductRules.LeverageExceeded, ConductRules.StaleHeartbeat];
@@ -158,9 +168,10 @@ public sealed class TrendWatcher(
 	ITrendSource trendSource,
 	AlertStore alerts,
 	INotifier notifier,
+	IJudgeClient judge,
 	IOptions<WatchOptions> options,
 	TimeProvider clock,
-	ILogger<TrendWatcher> logger) : WatcherBase(source, alerts, notifier, options, clock, logger)
+	ILogger<TrendWatcher> logger) : WatcherBase(source, alerts, notifier, judge, options, clock, logger)
 {
 	private static readonly string[] All = [TrendRules.FlipNotClosed, TrendRules.FlipNotOpened];
 	private TrendReading? _trend;

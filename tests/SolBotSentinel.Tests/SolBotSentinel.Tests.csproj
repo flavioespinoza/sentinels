@@ -21,10 +21,12 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\SolBotSentinel\SolBotSentinel.csproj" />
+    <ProjectReference Include="..\..\src\SolBotJudge\SolBotJudge.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <None Update="engine-feed.fixture.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="fixtures\**" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
 </Project>

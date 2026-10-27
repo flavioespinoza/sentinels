@@ -1,0 +1,7 @@
+2026-10-22T00:00:01+0000 sol-bot-production sol-bot-engine[93959]: [jupiter] swap-instructions: Jupiter swap-instructions HTTP 429 -- retry 1/3 in 1000ms
+2026-10-22T00:00:02+0000 sol-bot-production sol-bot-engine[93959]: [jupiter] swap-instructions: Jupiter swap-instructions HTTP 429 -- retry 2/3 in 2000ms
+2026-10-22T00:00:04+0000 sol-bot-production sol-bot-engine[93959]: [jupiter] swap-instructions: Jupiter swap-instructions HTTP 429 -- retry 3/3 in 4000ms
+2026-10-22T00:00:08+0000 sol-bot-production sol-bot-engine[93959]: [daemon] FLIP SHORT @ 2026-10-22T00:00:00.000Z price=106.84
+2026-10-22T00:00:08+0000 sol-bot-production sol-bot-engine[93959]:   bot tallboy:DVGSXybY9QD5PuRT5iZUyakjf9QGZujzgvAeixTMnBuk: failed (Jupiter swap-instructions HTTP 429)
+2026-10-22T00:00:08+0000 sol-bot-production sol-bot-engine[93959]:   bot shorty:7R5cvRUqL43MALe7aoz4HNrzFuNqeQYBPTSBUVLsqysf: acted
+2026-10-22T00:00:08+0000 sol-bot-production sol-bot-engine[93959]:   bot tallboy:FGB5ChtG9Ti7FG3KbSEPLhzZhKgDR2MCLdNwCxJChZhj: skipped (nothing-to-close)

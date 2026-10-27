@@ -23,6 +23,12 @@ builder.Services.AddSingleton<ITrendSource>(sp => UseHttp(sp)
 	? sp.GetRequiredService<HttpFeed>()
 	: sp.GetRequiredService<SimulatedMarket>());
 
+// Flavio, Oct 27 2026: the judge proof. A NullJudge unless JudgeEnabled, read when first asked.
+builder.Services.AddSingleton<IJudgeClient>(sp =>
+	sp.GetRequiredService<IOptions<WatchOptions>>().Value.JudgeEnabled
+		? ActivatorUtilities.CreateInstance<JudgeClient>(sp)
+		: new NullJudge());
+
 // Each watcher is one class and one line here. A new watcher is added the same way.
 builder.Services.AddHostedService<RiskWatcher>();
 builder.Services.AddHostedService<ConductWatcher>();

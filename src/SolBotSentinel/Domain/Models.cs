@@ -78,4 +78,11 @@ public sealed class WatchOptions
 	public long FlipToleranceMs { get; set; } = 2_000;
 	/// <summary>How often an alert that is still active is paged again. Zero disables repeats.</summary>
 	public long RepageMs { get; set; } = 1_800_000;
+
+	/// <summary>Flavio, Oct 27 2026: the judge proof. Off by default; when on, a flip-not-closed trip gets a second page with a model's explanation.</summary>
+	public bool JudgeEnabled { get; set; } = false;
+	public string JudgeUrl { get; set; } = "http://127.0.0.1:8096/judge";
+	public int JudgeTimeoutMs { get; set; } = 20_000;
+	/// <summary>At most this many judge calls per rolling hour across all bots. Over it, pages go unjudged.</summary>
+	public int JudgeMaxPerHour { get; set; } = 10;
 }
